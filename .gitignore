@@ -9,3 +9,11 @@ public/
 
 ; Ignore Gemini output
 gemini/
+# nixago: ignore-linked-files
+book.toml
+treefmt.toml
+adrgen.config.yml
+lefthook.yml
+.conform.yaml
+# nixago-auto-created: mdbook-build-folder
+docs/book/**
