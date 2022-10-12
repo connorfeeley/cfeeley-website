@@ -9,6 +9,10 @@ public/
 
 ; Ignore Gemini output
 gemini/
+
+; Ignore errant README.html files
+README.html
+
 # nixago: ignore-linked-files
 book.toml
 treefmt.toml
