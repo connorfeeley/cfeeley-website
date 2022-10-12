@@ -83,6 +83,7 @@
 
 ;; FIXME: conditionally use cfeeley.org or localhost (for development)
 (setq dw/site-url "http://localhost:5678")
+(setq dw/sc-site-url "https://systemcrafters.net")
 
 (org-link-set-parameters
  "yt"
