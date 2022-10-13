@@ -142,7 +142,7 @@
                  (div (@ (class "row"))
                       (div (@ (class "col-sm col-md text-sm-left text-md-right text-lg-right text-xl-right"))
                            (p "Made with " ,(plist-get info :creator))
-                           (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy"))
+                           ;; (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy"))
                            (p "Contact: " (code () "&ltubiquitous VCS&gt @ &ltthis site&gt"))
                            ))))))
 
