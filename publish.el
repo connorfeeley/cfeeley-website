@@ -82,7 +82,7 @@
           " </div>"))
 
 ;; FIXME: conditionally use cfeeley.org or localhost (for development)
-(setq dw/site-url "http://localhost:5678")
+(setq dw/site-url "")
 (setq dw/sc-site-url "https://systemcrafters.net")
 
 (org-link-set-parameters
@@ -98,8 +98,8 @@
      (format yt-iframe-format
              path (or desc "")))))
 
-(setq dw/site-title   "System Crafters")
-(setq dw/site-tagline "")
+(setq dw/site-title   "/cfeeley")
+(setq dw/site-tagline "Thoughts on things.")
 
 (setq org-publish-use-timestamps-flag t
       org-publish-timestamp-directory "./.org-cache/"
@@ -130,12 +130,10 @@
                     (div (@ (class "row align-items-center justify-content-between"))
                          (div (@ (class "col-sm-12 col-md-12"))
                               (nav (@ (class "nav"))
-                                   (a (@ (class "nav-link") (href "/")) "Home") " "
-                                   ;; (a (@ (class "nav-link") (href "/articles")) "Articles")
-                                   (a (@ (class "nav-link") (href "/videos")) "Videos") " "
-                                   (a (@ (class "nav-link") (href "https://wiki.systemcrafters.net")) "Wiki") " "
-                                   (a (@ (class "nav-link") (href "https://store.systemcrafters.net?utm_source=sc-site-nav")) "Merch Store") " "
-                                   (a (@ (class "nav-link") (href "/support-the-channel")) "Support The Channel")))))))))
+                                (a (@ (class "nav-link") (href "/")) "home") " "
+                                (a (@ (class "nav-link") (href "/tech")) "/tech") " "
+                                (a (@ (class "nav-link") (href "/urban")) "/urban") " "
+                                ))))))))
 
 (defun dw/site-footer (info)
   (list
