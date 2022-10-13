@@ -81,7 +81,8 @@
           " <iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/%s\" allowfullscreen></iframe>"
           " </div>"))
 
-(setq dw/site-url "https://systemcrafters.net")
+;; FIXME: conditionally use cfeeley.org or localhost (for development)
+(setq dw/site-url "http://localhost:5678")
 
 (org-link-set-parameters
  "yt"
@@ -167,24 +168,27 @@
     `(html (@ (lang "en"))
            (head
             (meta (@ (charset "utf-8")))
-            (meta (@ (author "David Wilson")))
+            (meta (@ (author "Connor Feeley")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
+            ;; FIXME: use local CSS/font resources
+            (base (@ (href ,(concat dw/site-url "/"))))
             (link (@ (rel "stylesheet")
-                     (href "/css/bootstrap.min.css")))
+                     (href ,(concat dw/sc-site-url "/css/bootstrap.min.css"))))
             (link (@ (rel "stylesheet")
-                     (href "/fonts/iosevka-aile/iosevka-aile.css")))
+                     (href ,(concat dw/sc-site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet")
-                     (href "/fonts/jetbrains-mono/jetbrains-mono.css")))
+                     (href ,(concat dw/sc-site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
             (link (@ (rel "stylesheet")
-                     (href "/css/code.css")))
+                     (href ,(concat dw/sc-site-url "/css/code.css"))))
             (link (@ (rel "stylesheet")
-                     (href "/css/site.css")))
-            (script (@ (defer "defer")
-                       (data-domain "systemcrafters.net")
-                       (src "https://plausible.io/js/plausible.js"))
-                    ;; Empty string to cause a closing </script> tag
-                    "")
+                     (href ,(concat dw/sc-site-url "/css/site.css"))))
+            ;; Privacy conscious, open source (self hostable!) analytics solution
+            ;; (script (@ (defer "defer")
+            ;;            (data-domain "systemcrafters.net")
+            ;;            (src "https://plausible.io/js/plausible.js"))
+            ;;         ;; Empty string to cause a closing </script> tag
+            ;;         "")
             (title ,(concat (org-export-data (plist-get info :title) info) " - System Crafters")))
            (body
             ,@(dw/site-header info)
@@ -345,6 +349,8 @@
              :publishing-function '(org-html-publish-to-html)
              :publishing-directory "./public"
              :with-timestamps t
+             :email "git@cfeeley.org"
+             :with-email t
              :with-title nil)
        (list "systemcrafters:gemini"
              :recursive t
