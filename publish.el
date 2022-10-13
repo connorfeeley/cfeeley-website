@@ -174,22 +174,22 @@
             ;; FIXME: use local CSS/font resources
             (base (@ (href ,(concat dw/site-url "/"))))
             (link (@ (rel "stylesheet")
-                     (href ,(concat dw/sc-site-url "/css/bootstrap.min.css"))))
+                     (href ,(concat dw/site-url "/css/bootstrap.min.css"))))
             (link (@ (rel "stylesheet")
-                     (href ,(concat dw/sc-site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
+                     (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet")
-                     (href ,(concat dw/sc-site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
+                     (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
             (link (@ (rel "stylesheet")
-                     (href ,(concat dw/sc-site-url "/css/code.css"))))
+                     (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet")
-                     (href ,(concat dw/sc-site-url "/css/site.css"))))
+                     (href ,(concat dw/site-url "/css/site.css"))))
             ;; Privacy conscious, open source (self hostable!) analytics solution
             ;; (script (@ (defer "defer")
             ;;            (data-domain "systemcrafters.net")
             ;;            (src "https://plausible.io/js/plausible.js"))
             ;;         ;; Empty string to cause a closing </script> tag
             ;;         "")
-            (title ,(concat (org-export-data (plist-get info :title) info) " - System Crafters")))
+            (title ,(concat (org-export-data (plist-get info :title) info) " @ cfeeley")))
            (body
             ,@(dw/site-header info)
             (div (@ (class "container"))
