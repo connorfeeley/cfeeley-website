@@ -59,10 +59,10 @@ It's a bit annoying having to flip to a `vterm` to run `publish`. I'd
 prefer it if the site were automatically re-generated whenever there's a
 change.
 
-Sounds like a job for `entr`:
+`entr` can handle this for us:
 
 ``` shell
-fd . --extension=org | entr publish
+fd . --extension=org --extension=css --extension=js | entr publish
 ```
 
 ## Export `README.org` to `README.md`
