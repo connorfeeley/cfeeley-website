@@ -62,7 +62,7 @@ change.
 `entr` can handle this for us:
 
 ``` shell
-fd . --extension=org --extension=css --extension=js | entr publish
+fd . --extension=org --extension=css --extension=js --extension=el | entr publish
 ```
 
 ## Export `README.org` to `README.md`

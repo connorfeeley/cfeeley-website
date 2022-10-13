@@ -90,7 +90,7 @@ It's a bit annoying having to flip to a ~vterm~ to run ~publish~. I'd prefer it 
 
 ~entr~ can handle this for us:
 #+begin_src shell :noeval :exports code
-fd . --extension=org --extension=css --extension=js | entr publish
+fd . --extension=org --extension=css --extension=js --extension=el | entr publish
 #+end_src
 
 ** Export ~README.org~ to ~README.md~
