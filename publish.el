@@ -98,7 +98,7 @@
      (format yt-iframe-format
              path (or desc "")))))
 
-(setq dw/site-title   "/cfeeley")
+(setq dw/site-title   "~ cfeeley")
 (setq dw/site-tagline "Thoughts on things.")
 
 (setq org-publish-use-timestamps-flag t
