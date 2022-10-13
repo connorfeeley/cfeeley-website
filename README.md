@@ -53,6 +53,18 @@ Alternatively, run the `publish` command from outside the devshell:
 nix develop ~/source/progenix-std#cf-site-shell --command publish
 ```
 
+### Watching for changes
+
+It's a bit annoying having to flip to a `vterm` to run `publish`. I'd
+prefer it if the site were automatically re-generated whenever there's a
+change.
+
+Sounds like a job for `entr`:
+
+``` shell
+fd . --extension=org | entr publish
+```
+
 ## Export `README.org` to `README.md`
 
 Since sourcehut doesn't support `org` README files, we need to convert
