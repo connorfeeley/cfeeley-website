@@ -1,0 +1,17 @@
+packages = [
+  "rsync",
+  "emacs",
+  "pandoc",
+]
+
+[[commands]]
+help = "Generate website by calling publish.el"
+name = "publish"
+command = "emacs --batch -l $PRJ_ROOT/publish.el --funcall dw/publish && rsync -rav resources/ public/"
+category = "site"
+
+[[commands]]
+name = "readme"
+help = "Export README.org to README.md"
+command = "pandoc $PRJ_ROOT/README.org --to gfm -o README.md && echo 'Converted: README.org -> README.md'"
+category = "site"
