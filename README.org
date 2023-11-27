@@ -21,56 +21,20 @@ Using my nix ~progenix-std~ devshell:
 
 #+name: devshell-menu
 #+BEGIN_SRC shell :results code :post strip(*this*) :exports both
-nix develop ~/source/progenix-std#cf-site-shell --command menu
+nix develop --command menu
 #+end_src
 
 #+RESULTS: devshell-menu
 #+begin_src shell
-nixago: updating repositoriy files
 
 [general commands]
 
-  adrgen          - A command-line tool for generating and managing Architecture Decision Records
-  check-the-flake - builds everything in the flake
-  mdbook          - Create books from MarkDown
-  menu            - prints this menu
-  repo-root       - prints the repository root path
-  treefmt         - one CLI to format the code tree
-  wip             - alias for: git add . && git commit -m WIP
-
-[legal]
-
-  reuse           - A tool for compliance with the REUSE Initiative recommendations
+  menu    - prints this menu
 
 [site]
 
-  publish         - Generate website by calling publish.el
-  readme          - Export README.org to README.md
-
-#+end_src
-
-#+RESULTS:
-#+begin_src shell
-nixago: updating repositoriy files
-
-[general commands]
-
-  adrgen          - A command-line tool for generating and managing Architecture Decision Records
-  check-the-flake - builds everything in the flake
-  mdbook          - Create books from MarkDown
-  menu            - prints this menu
-  repo-root       - prints the repository root path
-  treefmt         - one CLI to format the code tree
-  wip             - alias for: git add . && git commit -m WIP
-
-[legal]
-
-  reuse           - A tool for compliance with the REUSE Initiative recommendations
-
-[site]
-
-  publish         - Generate website by calling publish.el
-  readme          - Export README.org to README.md
+  publish - Generate website by calling publish.el
+  readme  - Export README.org to README.md
 
 #+end_src
 
@@ -82,7 +46,7 @@ publish
 
 Alternatively, run the ~publish~ command from outside the devshell:
 #+BEGIN_SRC shell :results output :post strip(*this*) :export code
-nix develop ~/source/progenix-std#cf-site-shell --command publish
+nix develop --command publish
 #+end_src
 
 *** Watching for changes
@@ -101,7 +65,7 @@ readme
 
 Alternatively, run the ~readme~ command from outside the devshell:
 #+BEGIN_SRC shell :results output :post strip(*this*) :export code
-nix develop ~/source/progenix-std#cf-site-shell --command readme
+nix develop --command readme
 #+end_src
 
 #+RESULTS:
@@ -109,4 +73,3 @@ nix develop ~/source/progenix-std#cf-site-shell --command readme
 
 * Acknowledgements
 - System Crafters' (David Wilson) ~org-mode~ site: [ [[https://systemcrafters.net/][webpage]] | [[https://github.com/SystemCrafters/systemcrafters.github.io][src]] ]
-- The ~std~ Nix flake framework; used for the ~progenix-std~ devshells: [ [[https://std.divnix.com/][webpage]] | [[https://github.com/divnix/std][src]] ]
