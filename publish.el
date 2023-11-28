@@ -529,10 +529,7 @@ holding contextual information."
 
   ;; Copy the domains file to ensure the custom domain resolves
   (copy-file ".domains" "public/.domains" t)
-
-  ;; Copy the .well-known folder for Matrix
-  (unless (file-exists-p "public/.well-known")
-    (copy-directory ".well-known" "public/" t)))
+)
 
 (provide 'publish)
 ;;; publish.el ends here

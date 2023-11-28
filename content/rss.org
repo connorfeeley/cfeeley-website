@@ -1,0 +1,5 @@
+#+title: RSS Feeds
+
+You can follow these RSS feeds:
+
+- [[file:news.xml][News]]
