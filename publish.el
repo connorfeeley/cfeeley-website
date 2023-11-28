@@ -95,7 +95,7 @@
                     (div (@ (class "row align-items-center justify-content-between"))
                          (div (@ (class "col-sm-12 col-md-8"))
                               (div (@ (class "site-title"))
-                                   ,"~ cfeeley"))
+                                   ,"Connor Feeley ~ cfeeley"))
                          (div (@ (class "col-sm col-md"))
                               (div (@ (class "site-description text-sm-left text-md-right text-lg-right text-xl-right"))
                                    ,""))))
@@ -106,8 +106,7 @@
                             (nav (@ (class "nav"))
                               (a (@ (class "nav-link") (href "/")) "home") " "
                               (a (@ (class "nav-link") (href "/city-stuff")) "/city stuff") " "
-                              (a (@ (class "nav-link") (href "/tech")) "/tech") " "
-                              ))))))))
+                              (a (@ (class "nav-link") (href "/tech")) "/tech") " "))))))))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
@@ -153,7 +152,6 @@
                             (exclude-header)
                             (exclude-footer))
   (concat
-   "<!-- Generated from " (dw/get-commit-hash)  " on " (format-time-string "%Y-%m-%d @ %H:%M") " with " org-export-creator-string " -->\n"
    "<!DOCTYPE html>"
    (sxml-to-xml
     `(html (@ (lang "en"))
@@ -162,14 +160,19 @@
             (meta (@ (author "Connor Feeley")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
-            (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "16x16")   (target "_blank") (href "/img/favicon-16x16.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "32x32")   (target "_blank") (href "/img/favicon-32x32.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "48x48")   (target "_blank") (href "/img/favicon-48x48.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "96x96")   (target "_blank") (href "/img/favicon-96x96.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "180x180") (target "_blank") (href "/img/favicon-180x180.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "300x300") (target "_blank") (href "/img/favicon-300x300.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "512x512") (target "_blank") (href "/img/favicon-512x512.png")))
             (link (@ (rel "alternative")
                      (type "application/rss+xml")
                      (title "News")
                      (href ,(concat dw/site-url "/rss/news.xml"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
-            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/bootstrap.min.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
             (script (@ (defer "defer")
