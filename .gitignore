@@ -22,3 +22,4 @@ lefthook.yml
 # nixago-auto-created: mdbook-build-folder
 docs/book/**
 /result
+/assets/img/apple-touch-icon-180x180.png
