@@ -1,0 +1,20 @@
+#+title: Privacy Policy
+This website uses (self-hosted) [[https://www.goatcounter.com/][GoatCounter]] for analytics.
+
+I'm only interested in some fairly simple analytics like specific page views and client resolutions. I don't feel right opting my users into the advertising surviellance ecosystem by using the dominant analytics platforms. While GoatCounter is available as a hosted service, I still prefer to keep custody of that data.
+
+The following information is collected:
+- URL of the visited page
+- ~Referer~ header
+- ~User-Agent~ header
+- Screen size.
+- Country and region name based on IP address.
+- A hash of the IP address, ~User-Agent~, and random number
+
+No personal information (such as IP address) is collected; a hash of the IP address, ~User-Agent~, and a random number ("salt") is kept in the process memory for 8 hours to identify a browsing session, and is never stored to disk.
+
+There is no information stored in the browser with cookies, localStorage, or other methods.
+
+No cross-site tracking is done.
+
+This analytics data isn't shared with anyone; nor is it sold.
