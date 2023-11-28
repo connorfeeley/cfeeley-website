@@ -1,5 +1,6 @@
-;;; publish.el --- Build systemcrafters.net
+;;; publish.el --- Build cfeeley.org
 
+;; Copyright (C) 2023 Connor Feeley <git@cfeeley.org>
 ;; Copyright (C) 2021, 2023 David Wilson <david@systemcrafters.net>
 
 ;; Author: David Wilson <david@systemcrafters.net>
@@ -68,35 +69,13 @@
 (defun dw/embed-video (video-id)
   (format yt-iframe-format video-id))
 
-(setq user-full-name "David Wilson")
-(setq user-mail-address "david@systemcrafters.net")
+(setq user-full-name "Connor Feeley")
+(setq user-mail-address "git@cfeeley.org")
 
 (defvar dw/site-url (if (string-equal (getenv "CI") "true")
-                        "https://systemcrafters.net"
+                        "https://cfeeley.org"
                       "http://localhost:8080")
   "The URL for the site being generated.")
-
-(defun dw/embed-list-form ()
-  `(div (@ (class "list-form center"))
-        (div (@ (class "list-form-title")) "Subscribe to the System Crafters Newsletter!")
-        (form (@ (method "POST")
-                 (action "https://www.simplelists.com/subscribe.php"))
-              (input (@ (type "hidden") (name "format") (value "text")))
-              (input (@ (type "hidden") (name "action") (value "subscribe")))
-              (input (@ (type "hidden") (name "list") (value "news@lists.systemcrafters.net")))
-              (div (@ (class "list-form-message"))
-                   "Stay up to date with the latest System Crafters news and updates!  Read the "
-                   (a (@ (href "/newsletter/")) "Newsletter")
-                   " page for more information.")
-              (div (@ (class "row"))
-                   (div (@ (class "column"))
-                        (div (@ (class "row center list-form-label")) "Name (optional)")
-                        (div (@ (class "row")) (input (@ (type "text") (name "name")))))
-                   (div (@ (class "column"))
-                        (div (@ (class "row center list-form-label")) "Email Address")
-                        (div (@ (class "row")) (input (@ (type "text") (name "email"))))))
-              (div nil
-                   (input (@ (type "submit") (value "Subscribe!")))))))
 
 (org-link-set-parameters
  "yt"
@@ -113,19 +92,22 @@
 (defun dw/site-header ()
   (list `(header (@ (class "site-header"))
                  (div (@ (class "container"))
-                      (div (@ (class "site-title"))
-                           (img (@ (class "logo")
-                                   (src ,(concat dw/site-url "/img/sc_logo.png"))
-                                   (alt "System Crafters")))))
+                    (div (@ (class "row align-items-center justify-content-between"))
+                         (div (@ (class "col-sm-12 col-md-8"))
+                              (div (@ (class "site-title"))
+                                   ,"~ cfeeley"))
+                         (div (@ (class "col-sm col-md"))
+                              (div (@ (class "site-description text-sm-left text-md-right text-lg-right text-xl-right"))
+                                   ,""))))
                  (div (@ (class "site-masthead"))
                       (div (@ (class "container"))
-                           (nav (@ (class "nav"))
-                                (a (@ (class "nav-link") (href "/")) "Home") " "
-                                (a (@ (class "nav-link") (href "/guides/")) "Guides") " "
-                                (a (@ (class "nav-link") (href "/news/")) "News") " "
-                                (a (@ (class "nav-link") (href "/community/")) "Community") " "
-                                (a (@ (class "nav-link") (href "https://store.systemcrafters.net?utm_source=sc-site-nav")) "Store") " "
-                                (a (@ (class "nav-link") (href "/how-to-help/")) "How to Help")))))))
+                        (div (@ (class "row align-items-center justify-content-between"))
+                          (div (@ (class "col-sm-12 col-md-12"))
+                            (nav (@ (class "nav"))
+                              (a (@ (class "nav-link") (href "/")) "home") " "
+                              (a (@ (class "nav-link") (href "/city-stuff")) "/city stuff") " "
+                              (a (@ (class "nav-link") (href "/tech")) "/tech") " "
+                              ))))))))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
@@ -136,15 +118,9 @@
                                    " · "
                                    (a (@ (href ,(concat dw/site-url "/credits/"))) "Credits")
                                    " · "
-                                   (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Feeds")
-                                   " · "
-                                   (a (@ (rel "me") (href "https://fosstodon.org/@daviwil")) "Fediverse"))
-                                (p "© 2021-2023 System Crafters LLC"))
-                           (div (@ (class "column align-right"))
-                                (p (a (@ (href "https://codeberg.org/SystemCrafters/systemcrafters.net"))
-                                      (img (@ (src ,(concat dw/site-url "/img/codeberg.png"))
-                                              (style "width: 120px")
-                                              (alt "Contribute on Codeberg")))))))))))
+                                   (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Feeds"))
+                             (p "© 2023 Connor Feeley"))
+                           )))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir
@@ -183,25 +159,26 @@
     `(html (@ (lang "en"))
            (head
             (meta (@ (charset "utf-8")))
-            (meta (@ (author "System Crafters - David Wilson")))
+            (meta (@ (author "Connor Feeley")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
             (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
             (link (@ (rel "alternative")
                      (type "application/rss+xml")
-                     (title "System Crafters News")
+                     (title "News")
                      (href ,(concat dw/site-url "/rss/news.xml"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/bootstrap.min.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
             (script (@ (defer "defer")
-                       (data-domain "systemcrafters.net")
-                       (src "https://plausible.io/js/plausible.js"))
+                       (data-goatcounter "cfeeley.org")
+                       (src "https://stats.bikes.cfeeley.org/count.js"))
                     ;; Empty string to cause a closing </script> tag
                     "")
             ,(when head-extra head-extra)
-            (title ,(concat title " - System Crafters")))
+            (title ,(concat title " ~ cfeeley")))
            (body ,@(unless exclude-header
                      (dw/site-header))
                  (div (@ (class "container"))
@@ -214,9 +191,8 @@
                                 (dw/embed-video video-id))
                            ,(when pre-content pre-content)
                            (div (@ (id "content"))
-                                ,content))
-                      ,(dw/embed-list-form))
-                 ,@(unless exclude-footer
+                                (*RAW-STRING* ,content))))
+             ,@(unless exclude-footer
                      (dw/site-footer)))))))
 
 (defun dw/org-html-template (contents info)
@@ -299,8 +275,7 @@ holding contextual information."
 	  (format "<div class=\"%s center\">\n%s\n</div>"
             block-type
             (or contents
-                (if (string= block-type "cta")
-                    "If you find this guide helpful, please consider supporting System Crafters via the links on the <a href=\"/how-to-help/#support-my-work\">How to Help</a> page!"
+                (if (string= block-type "cta") ""
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
@@ -429,27 +404,28 @@ holding contextual information."
       webfeeder-date-function #'dw/rss-extract-date)
 
 (setq org-publish-project-alist
-      (list '("systemcrafters:main"
+      (list '("cfeeley:main"
+              :recursive t
               :base-directory "./content"
               :base-extension "org"
               :publishing-directory "./public"
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
-            '("systemcrafters:faq"
+            '("cfeeley:faq"
               :base-directory "./content/faq"
               :base-extension "org"
               :publishing-directory "./public/faq"
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
-            '("systemcrafters:assets"
+            '("cfeeley:assets"
               :base-directory "./assets"
               :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|woff2\\|ttf"
               :publishing-directory "./public"
               :recursive t
               :publishing-function org-publish-attachment)
-            '("systemcrafters:live-streams"
+            '("cfeeley:live-streams"
               :base-directory "./content/live-streams"
               :base-extension "org"
               :publishing-directory "./public/live-streams"
@@ -462,26 +438,26 @@ holding contextual information."
               :sitemap-sort-files anti-chronologically
               :with-title nil
               :with-timestamps nil)
-            '("systemcrafters:news"
+            '("cfeeley:news"
               :base-directory "./content/news"
               :base-extension "org"
               :publishing-directory "./public/news"
               :publishing-function org-html-publish-to-html
               :auto-sitemap t
               :sitemap-filename "../news.org"
-              :sitemap-title "System Crafters News"
+              :sitemap-title "News"
               :sitemap-format-entry dw/format-news-entry
               :sitemap-style list
               ;; :sitemap-function dw/news-sitemap
               :sitemap-sort-files anti-chronologically
               :with-title nil
               :with-timestamps nil)
-            '("systemcrafters:newsletter"
+            '("cfeeley:newsletter"
               :base-directory "./content/newsletter"
               :base-extension "txt"
               :publishing-directory "./public/newsletter"
               :publishing-function dw/publish-newsletter-page)
-            '("systemcrafters:videos"
+            '("cfeeley:videos"
               :base-directory "./content/videos"
               :base-extension "org"
               :recursive t
@@ -520,9 +496,9 @@ holding contextual information."
                              (directory-files-recursively "news"
                                                           ".*\\.html$")))
                    :builder 'webfeeder-make-rss
-                   :title "System Crafters News"
-                   :description "News and Insights from System Crafters!"
-                   :author "David Wilson")
+                   :title "cfeeley.org feed"
+                   :description "Latest updates from cfeeley.org"
+                   :author "Connor Feeley")
 
   (dw/generate-redirects '(("support-the-channel" . "how-to-help")
                            ("videos" . "guides")))

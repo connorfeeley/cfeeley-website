@@ -1,3 +1,3 @@
 #+title: Welcome!
 
-Check out new [[/news][News page]] to see the latest updates for the website and community.  You can also subscribe to [[/rss][RSS Feeds]] for various parts of the site.
+Check out new [[/news][News page]] to see the latest updates.  You can also subscribe to [[/rss][RSS Feeds]] for various parts of the site.
