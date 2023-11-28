@@ -131,8 +131,8 @@
                          (div (@ (class "col-sm-12 col-md-12"))
                               (nav (@ (class "nav"))
                                 (a (@ (class "nav-link") (href "/")) "home") " "
+                                (a (@ (class "nav-link") (href "/city-stuff")) "/city stuff") " "
                                 (a (@ (class "nav-link") (href "/tech")) "/tech") " "
-                                (a (@ (class "nav-link") (href "/urban")) "/urban") " "
                                 ))))))))
 
 (defun dw/site-footer (info)
