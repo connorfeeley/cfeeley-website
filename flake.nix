@@ -1,43 +1,48 @@
 {
   description = "Flake for personal website.";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  inputs.devshell.url = "github:numtide/devshell";
-  inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    devshell.url = "github:numtide/devshell";
 
-  inputs.flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
+    flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
 
-  outputs = { self, nixpkgs, flake-utils, devshell, ... }:
-    flake-utils.lib.eachDefaultSystem (system: {
-      packages.default =
-        let
-          pkgs = import nixpkgs { inherit system; };
-          emacsForPublish = ((pkgs.emacsPackagesFor pkgs.emacs29).emacsWithPackages (
-            epkgs: with epkgs; [ esxml htmlize webfeeder ]
-          ));
-        in
-        with pkgs;
-        stdenv.mkDerivation {
-          src = ./.;
-          name = "cfeeley-website";
-          buildInputs = [ emacsForPublish git ];
-          buildPhase = ''
-            mkdir -p $out
-            emacs -Q --batch -l publish.el --funcall dw/publish
-            cp -r resources/* public/
-            cp -r public/* $out
-          '';
-        };
-      devShells.default =
-        let
-          pkgs = import nixpkgs {
-            inherit system;
+    # flake-parts and friends.
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-root.url = "github:srid/flake-root";
+    treefmt-nix = { url = "github:numtide/treefmt-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
+  };
 
-            overlays = [ devshell.overlays.default ];
+  outputs = inputs@{ self, nixpkgs, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, moduleWithSystem, flake-parts-lib, ... }:
+      {
+        debug = true;
+        systems = nixpkgs.lib.systems.flakeExposed;
+        imports = [
+          inputs.treefmt-nix.flakeModule
+          inputs.flake-root.flakeModule
+          inputs.devshell.flakeModule
+        ];
+
+        flake = { };
+
+        perSystem = { self', config, pkgs, ... }:
+          let
+            emacsForPublish = ((pkgs.emacsPackagesFor pkgs.emacs29).emacsWithPackages (
+              epkgs: with epkgs; [ esxml htmlize webfeeder ]
+            ));
+          in
+          {
+            packages.default = pkgs.callPackage ./nix/cfeeley-website/default.nix { inherit emacsForPublish; };
+
+            devShells.default = pkgs.devshell.mkShell { imports = [ (pkgs.devshell.importTOML ./devshell.toml) ]; };
+
+            # Treefmt configuration.
+            treefmt.config = {
+              inherit (config.flake-root) projectRootFile;
+              package = pkgs.treefmt;
+              programs.nixpkgs-fmt.enable = true;
+            };
           };
-        in
-        pkgs.devshell.mkShell {
-          imports = [ (pkgs.devshell.importTOML ./devshell.toml) ];
-        };
-    });
+      });
 }
