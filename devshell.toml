@@ -7,7 +7,7 @@ packages = [
 [[commands]]
 help = "Generate website by calling publish.el"
 name = "publish"
-command = "emacs --batch -l $PRJ_ROOT/publish.el --funcall dw/publish && rsync -rav resources/ public/"
+command = "emacs -Q --batch -l $PRJ_ROOT/publish.el --funcall dw/publish && rsync -rav resources/ public/"
 category = "site"
 
 [[commands]]
