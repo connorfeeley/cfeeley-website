@@ -82,8 +82,8 @@
           " </div>"))
 
 ;; FIXME: conditionally use cfeeley.org or localhost (for development)
-(setq dw/site-url "")
-(setq dw/sc-site-url "https://systemcrafters.net")
+(setq dw/site-url "https://cfeeley.org")
+(setq dw/sc-site-url "https://cfeeley.org")
 
 (org-link-set-parameters
  "yt"
@@ -184,11 +184,11 @@
             (link (@ (rel "stylesheet")
                      (href ,(concat dw/site-url "/css/site.css"))))
             ;; Privacy conscious, open source (self hostable!) analytics solution
-            ;; (script (@ (defer "defer")
-            ;;            (data-domain "systemcrafters.net")
-            ;;            (src "https://plausible.io/js/plausible.js"))
-            ;;         ;; Empty string to cause a closing </script> tag
-            ;;         "")
+            (script (@ (defer "defer")
+                       (data-goatcounter "cfeeley.org")
+                       (src "//stats.bikes.cfeeley.org/count.js"))
+                    ;; Empty string to cause a closing </script> tag
+                    "")
             (title ,(concat (org-export-data (plist-get info :title) info) " @ cfeeley")))
            (body
             ,@(dw/site-header info)
