@@ -1,6 +1,6 @@
 packages = [
   "rsync",
-  "emacs",
+  "emacs29",
   "pandoc",
 ]
 
