@@ -9,11 +9,18 @@
 
   outputs = { self, nixpkgs, flake-utils, devshell, ... }:
     flake-utils.lib.eachDefaultSystem (system: {
-      packages.default = let pkgs = import nixpkgs { inherit system; }; in with pkgs;
+      packages.default =
+        let
+          pkgs = import nixpkgs { inherit system; };
+          emacsForPublish = ((pkgs.emacsPackagesFor pkgs.emacs29).emacsWithPackages (
+            epkgs: with epkgs; [ esxml webfeeder ]
+          ));
+        in
+        with pkgs;
         stdenv.mkDerivation {
           src = ./.;
           name = "cfeeley-website";
-          buildInputs = [ emacs rsync ];
+          buildInputs = [ emacsForPublish ];
           buildPhase = ''
             mkdir -p $out
             emacs -Q --batch -l publish.el --funcall dw/publish
