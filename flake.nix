@@ -20,7 +20,7 @@
         stdenv.mkDerivation {
           src = ./.;
           name = "cfeeley-website";
-          buildInputs = [ emacsForPublish ];
+          buildInputs = [ emacsForPublish git ];
           buildPhase = ''
             mkdir -p $out
             emacs -Q --batch -l publish.el --funcall dw/publish
