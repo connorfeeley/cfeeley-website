@@ -1,3 +1,3 @@
 #+title: /city stuff
-* [[./freedom-of-information/][Getting City of Toronto Records with Freedom of Information Requests]]
-** [[./freedom-of-information/01-the-request.org][Part 1: The Request]]
+* [[city-stuff/freedom-of-information/][Getting City of Toronto Records with Freedom of Information Requests]]
+** [[city-stuff/freedom-of-information/01-the-request][Part 1: The Request]]

@@ -104,6 +104,8 @@
 (setq org-publish-use-timestamps-flag t
       org-publish-timestamp-directory "./.org-cache/"
       org-export-with-section-numbers nil
+      org-footnote-auto-label t
+      org-footnote-auto-adjust t
       org-export-use-babel nil
       org-export-with-smart-quotes t
       org-export-with-sub-superscripts nil
@@ -143,7 +145,7 @@
                       (div (@ (class "col-sm col-md text-sm-left text-md-right text-lg-right text-xl-right"))
                            (p "Made with " ,(plist-get info :creator))
                            ;; (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy"))
-                           (p "Contact: " (code () "&ltubiquitous VCS&gt @ &ltthis site&gt"))
+                           (p "Contact: " (code () "git@cfeeley.org"))
                            ))))))
 
 (defun get-article-output-path (org-file pub-dir)
@@ -282,16 +284,34 @@
      (when (and container (not (string= "" container)))
        (format "</%s>" (cl-subseq container 0 (cl-search " " container)))))))
 
-(org-export-define-derived-backend 'site-html
-    'slimhtml
+(org-export-define-derived-backend 'site-html 'html
   :translate-alist
   '((template . dw/org-html-template)
-    (link . dw/org-html-link)
-    (code . ox-slimhtml-verbatim)
-    (headline . dw/org-html-headline))
+     (link . dw/org-html-link)
+     (code . ox-slimhtml-verbatim)
+     (headline . dw/org-html-headline)
+     (quote-block . ca/slimhtml-quote-block)
+     ;; (footnote-definition . org-html-footnote-definition)
+     ;; (footnote-reference . org-html-footnote-reference)
+     )
   :options-alist
   '((:page-type "PAGE-TYPE" nil nil t)
-    (:html-use-infojs nil nil nil)))
+     (:html-use-infojs nil nil nil)))
+
+;; quote block
+;; #+BEGIN_EXAMPLE
+;;   ,#+BEGIN_QUOTE                              # <blockquote>
+;;     quoted text                              # quoted text
+;;   ,#+END_QUOTE                                # </blockquote>
+;; #+END_EXAMPLE
+;; Source: https://github.com/balddotcat/ox-slimhtml/pull/6
+(defun ca/slimhtml-quote-block (quote-block contents info)
+  "Transcode QUOTE-BLOCK from Org to HTML.
+CONTENTS is the text of a #+BEGIN_QUOTE...#+END_QUOTE block.
+INFO is a plist holding contextual information."
+  (when contents
+    (format "<blockquote%s><p>%s</p></blockquote>"
+            (ox-slimhtml--attr quote-block) contents)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."

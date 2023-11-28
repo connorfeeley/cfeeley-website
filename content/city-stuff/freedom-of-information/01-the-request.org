@@ -1,7 +1,7 @@
 #+title: /city stuff /freedom of information
 * Part 1: The Request
 
-This is the exact text of the FOI request I sent[fn:1]:
+This is the exact text of the FOI request I sent [fn:1] :
 #+begin_quote
 City Clerk’s Office
 
