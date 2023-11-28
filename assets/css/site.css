@@ -284,7 +284,6 @@ strong {
 .site-header {
   font-family: "Iosevka Aile Web", sans-serif;
   font-weight: bold;
-  background-image: url("/img/header_bg.png");
   background-size: cover;
 }
 
@@ -445,5 +444,19 @@ strong {
   color: #232635;
 }
 
-.newsletter-text {
+/* Style for footnotes */
+.footdef {
+  display: inline-flex;
+  font-size: 0.9rem;
+}
+
+.footdef .footnum {
+  margin-right: 0.5rem;
+}
+
+/* Style for blockquotes */
+blockquote {
+  border-left: 0.25rem solid #00bfff;
+  padding-left: 1rem;
+  margin-left: 0;
 }
