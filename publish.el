@@ -362,7 +362,7 @@ INFO is a plist holding contextual information."
 
 (setq org-publish-project-alist
       (list
-       (list "systemcrafters:main"
+       (list "cfeeley:main"
              :recursive t
              :base-extension "org"
              :base-directory "./content"
@@ -372,14 +372,8 @@ INFO is a plist holding contextual information."
              :email "git@cfeeley.org"
              :with-email t
              :with-title nil)
-       (list "systemcrafters:gemini"
-             :recursive t
-             :base-extension "org"
-             :base-directory "./content"
-             :publishing-function '(dw/org-gemini-publish-to-gemini)
-             :publishing-directory "./gemini"
-             :with-timestamps t)))
+       ))
 
 (defun dw/publish ()
   (interactive)
-  (org-publish-all t))
+  (org-publish "cfeeley:main" t))

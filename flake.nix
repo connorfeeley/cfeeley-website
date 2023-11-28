@@ -9,6 +9,18 @@
 
   outputs = { self, nixpkgs, flake-utils, devshell, ... }:
     flake-utils.lib.eachDefaultSystem (system: {
+      packages.default = let pkgs = import nixpkgs { inherit system; }; in with pkgs;
+        stdenv.mkDerivation {
+          src = ./.;
+          name = "cfeeley-website";
+          buildInputs = [ emacs rsync ];
+          buildPhase = ''
+            mkdir -p $out
+            emacs -Q --batch -l publish.el --funcall dw/publish
+            cp -r resources/* public/
+            cp -r public/* $out
+          '';
+        };
       devShells.default =
         let
           pkgs = import nixpkgs {
