@@ -1,23 +1,16 @@
-;;; publish.el --- Build systemcrafters.cc
+;;; publish.el --- Build cfeeley.org
 
-;; Copyright (C) 2018 Pierre Neidhardt <mail@ambrevar.xyz>
-;; Copyright (C) 2021 David Wilson <david@daviwil.com>
+;; Copyright (C) 2023 Connor Feeley <git@cfeeley.org>
+;; Copyright (C) 2021, 2023 David Wilson <david@systemcrafters.net>
 
-;; Author: David Wilson <david@daviwil.com>
-;; Maintainer: David Wilson <david@daviwil.com>
-;; URL: https://sr.ht/~systemcrafters/site
+;; Author: David Wilson <david@systemcrafters.net>
+;; Maintainer: David Wilson <david@systemcrafters.net>
+;; URL: https://codeberg.org/SystemCrafters/systemcrafters.net
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "26.1"))
+;; Package-Requires: ((emacs "28.2"))
 ;; Keywords: hypermedia, blog, feed, rss
 
 ;; This file is not part of GNU Emacs.
-
-;; This file is loosely based on Pierre Neidhardt's publish.el, here's his
-;; authorship details:
-
-;; Author: Pierre Neidhardt <mail@ambrevar.xyz>
-;; Maintainer: Pierre Neidhardt <mail@ambrevar.xyz>
-;; URL: https://gitlab.com/Ambrevar/ambrevar.gitlab.io
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Docs License as published by
@@ -32,8 +25,10 @@
 ;; You should have received a copy of the GNU General Docs License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;; Usage:
+;;; Usage:
 ;; emacs -Q --batch -l ./publish.el --funcall dw/publish
+
+;;; Code:
 
 ;; Initialize package sources
 (require 'package)
@@ -49,11 +44,15 @@
 ;; Initialize the package system
 (require 'use-package)
 
-;; Unfortunately this is necessary for now...
-(load-file "./ox-slimhtml.el")
+;; Require built-in dependencies
+(require 'vc-git)
+(require 'ox-publish)
+(require 'subr-x)
+(require 'cl-lib)
 
 ;; Install other dependencies
 (use-package esxml
+  :pin "melpa-stable"
   :ensure t)
 
 (use-package htmlize
@@ -62,17 +61,21 @@
 (use-package webfeeder
   :ensure t)
 
-(require 'ox-publish)
-
 (defvar yt-iframe-format
-  ;; TODO: Change this after switching from Bootstrap
-  (concat "<div class=\"embed-responsive embed-responsive-16by9\">"
-          " <iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/%s\" allowfullscreen></iframe>"
-          " </div>"))
+  (concat "<div class=\"video\">"
+          "  <iframe src=\"https://www.youtube.com/embed/%s\" allowfullscreen></iframe>"
+          "</div>"))
 
-;; FIXME: conditionally use cfeeley.org or localhost (for development)
-(setq dw/site-url "https://cfeeley.org")
-(setq dw/sc-site-url "https://cfeeley.org")
+(defun dw/embed-video (video-id)
+  (format yt-iframe-format video-id))
+
+(setq user-full-name "Connor Feeley")
+(setq user-mail-address "git@cfeeley.org")
+
+(defvar dw/site-url (if (string-equal (getenv "CI") "true")
+                        "https://cfeeley.org"
+                      "http://localhost:8080")
+  "The URL for the site being generated.")
 
 (org-link-set-parameters
  "yt"
@@ -84,58 +87,39 @@
  :export
  (lambda (path desc backend channel)
    (when (eq backend 'html)
-     (format yt-iframe-format
-             path (or desc "")))))
+     (dw/embed-video path))))
 
-(setq dw/site-title   "~ cfeeley")
-(setq dw/site-tagline "")
-
-(setq org-publish-use-timestamps-flag t
-      org-publish-timestamp-directory "./.org-cache/"
-      org-export-with-section-numbers nil
-      org-footnote-auto-label t
-      org-footnote-auto-adjust t
-      org-export-use-babel nil
-      org-export-with-smart-quotes t
-      org-export-with-sub-superscripts nil
-      org-export-with-tags 'not-in-toc
-      org-export-with-toc t)
-
-;; We're using Git, we don't need no steenking backups
-(setq make-backup-files nil)
-
-(defun dw/site-header (info)
-  (let* ((file (plist-get info :output-file)))
-    `(div (div (@ (class "blog-header"))
-               (div (@ (class "container"))
+(defun dw/site-header ()
+  (list `(header (@ (class "site-header"))
+                 (div (@ (class "container"))
                     (div (@ (class "row align-items-center justify-content-between"))
                          (div (@ (class "col-sm-12 col-md-8"))
-                              (div (@ (class "blog-title"))
-                                   ,dw/site-title))
+                              (div (@ (class "site-title"))
+                                   ,"Connor Feeley ~ cfeeley"))
                          (div (@ (class "col-sm col-md"))
-                              (div (@ (class "blog-description text-sm-left text-md-right text-lg-right text-xl-right"))
-                                   ,dw/site-tagline)))))
+                              (div (@ (class "site-description text-sm-left text-md-right text-lg-right text-xl-right"))
+                                   ,""))))
+                 (div (@ (class "site-masthead"))
+                      (div (@ (class "container"))
+                        (div (@ (class "row align-items-center justify-content-between"))
+                          (div (@ (class "col-sm-12 col-md-12"))
+                            (nav (@ (class "nav"))
+                              (a (@ (class "nav-link") (href "/")) "home") " "
+                              (a (@ (class "nav-link") (href "/city-stuff")) "/city stuff") " "
+                              (a (@ (class "nav-link") (href "/tech")) "/tech") " "))))))))
 
-          (div (@ (class "blog-masthead"))
-               (div (@ (class "container"))
-                    (div (@ (class "row align-items-center justify-content-between"))
-                         (div (@ (class "col-sm-12 col-md-12"))
-                              (nav (@ (class "nav"))
-                                (a (@ (class "nav-link") (href "/")) "home") " "
-                                (a (@ (class "nav-link") (href "/city-stuff")) "/city stuff") " "
-                                (a (@ (class "nav-link") (href "/tech")) "/tech") " "
-                                ))))))))
-
-(defun dw/site-footer (info)
-  (list
-   `(footer (@ (class "blog-footer"))
-            (div (@ (class "container"))
-                 (div (@ (class "row"))
-                      (div (@ (class "col-sm col-md text-sm-left text-md-right text-lg-right text-xl-right"))
-                           (p "Made with " (*RAW-STRING* ,(plist-get info :creator)))
-                           ;; (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy"))
-                           (p "Contact: " (code () "git@cfeeley.org"))
-                           ))))))
+(defun dw/site-footer ()
+  (list `(footer (@ (class "site-footer"))
+                 (div (@ (class "container"))
+                      (div (@ (class "row"))
+                           (div (@ (class "column"))
+                                (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy")
+                                   " · "
+                                   (a (@ (href ,(concat dw/site-url "/credits/"))) "Credits")
+                                   " · "
+                                   (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Feeds"))
+                             (p "© 2023 Connor Feeley"))
+                           )))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir
@@ -144,16 +128,30 @@
                                (file-name-sans-extension
                                 (file-name-nondirectory org-file)))))))
 
-    (if (string-match "\\/index.org$" org-file)
+    (if (string-match "\\/index.org\\|\\/404.org$" org-file)
         pub-dir
         (progn
           (unless (file-directory-p article-dir)
             (make-directory article-dir t))
           article-dir))))
 
-(defun dw/org-html-template (contents info)
+(defun dw/get-commit-hash ()
+  "Get the short hash of the latest commit in the current repository."
+  (string-trim-right
+   (with-output-to-string
+     (with-current-buffer standard-output
+       (vc-git-command t nil nil "rev-parse" "--short" "HEAD")))))
+
+(cl-defun dw/generate-page (title
+                            content
+                            info
+                            &key
+                            (publish-date)
+                            (head-extra)
+                            (pre-content)
+                            (exclude-header)
+                            (exclude-footer))
   (concat
-   "<!-- " (org-export-data (org-export-get-date info "%Y-%m-%d") info) " -->\n"
    "<!DOCTYPE html>"
    (sxml-to-xml
     `(html (@ (lang "en"))
@@ -162,62 +160,54 @@
             (meta (@ (author "Connor Feeley")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
-            ;; FIXME: use local CSS/font resources
-            (base (@ (href ,(concat dw/site-url "/"))))
-            (link (@ (rel "stylesheet")
-                     (href ,(concat dw/site-url "/css/bootstrap.min.css"))))
-            (link (@ (rel "stylesheet")
-                     (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
-            (link (@ (rel "stylesheet")
-                     (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
-            (link (@ (rel "stylesheet")
-                     (href ,(concat dw/site-url "/css/code.css"))))
-            (link (@ (rel "stylesheet")
-                     (href ,(concat dw/site-url "/css/site.css"))))
-            ;; Privacy conscious, open source (self hostable!) analytics solution
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "16x16")   (target "_blank") (href "/img/favicon-16x16.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "32x32")   (target "_blank") (href "/img/favicon-32x32.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "48x48")   (target "_blank") (href "/img/favicon-48x48.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "96x96")   (target "_blank") (href "/img/favicon-96x96.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "180x180") (target "_blank") (href "/img/favicon-180x180.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "300x300") (target "_blank") (href "/img/favicon-300x300.png")))
+            (link (@ (rel "icon noopener noreferrer") (type "image/png") (sizes "512x512") (target "_blank") (href "/img/favicon-512x512.png")))
+            (link (@ (rel "alternative")
+                     (type "application/rss+xml")
+                     (title "News")
+                     (href ,(concat dw/site-url "/rss/news.xml"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
             (script (@ (defer "defer")
                        (data-goatcounter "cfeeley.org")
-                       (src "//stats.bikes.cfeeley.org/count.js"))
+                       (src "https://stats.bikes.cfeeley.org/count.js"))
                     ;; Empty string to cause a closing </script> tag
                     "")
-            (title ,(concat (org-export-data (plist-get info :title) info) " @ cfeeley")))
-           (body
-            ,@(dw/site-header info)
-            (div (@ (class "container"))
-                 (div (@ (class "row"))
-                      (div (@ (class "col-sm-12 blog-main"))
-                           (div (@ (class "blog-post"))
-                                (h1 (@ (class "blog-post-title"))
-                                    ,(org-export-data (plist-get info :title) info))
-                                (p (@ (class "blog-post-meta"))
-                                   ,(org-export-data (org-export-get-date info "%B %e, %Y") info))
-                                (*RAW-STRING* ,contents)
-                                ,(let ((tags (plist-get info :filetags)))
-                                   (when (and tags (> (list-length tags) 0))
-                                     `(p (@ (class "blog-post-tags"))
-                                         "Tags: "
-                                         ,(mapconcat (lambda (tag) tag)
-                                                     ;; TODO: We don't have tag pages yet
-                                                     ;; (format "<a href=\"/tags/%s/\">%s</a>" tag tag))
-                                                     (plist-get info :filetags)
-                                                     ", "))))
-                                ,(when (equal "article" (plist-get info :page-type))
-                                   ;; TODO: Link to mailing list
-                                   "<script src=\"https://utteranc.es/client.js\"
-                                              repo=\"daviwil/harmonicschemes.com\"
-                                              issue-term=\"title\"
-                                              label=\"comments\"
-                                              theme=\"photon-dark\"
-                                              crossorigin=\"anonymous\"
-                                              async>
-                                     </script>")))))
+            ,(when head-extra head-extra)
+            (title ,(concat title " ~ cfeeley")))
+           (body ,@(unless exclude-header
+                     (dw/site-header))
+                 (div (@ (class "container"))
+                      (div (@ (class "site-post"))
+                           (h1 (@ (class "site-post-title"))
+                               ,title)
+                           ,(when publish-date
+                              `(p (@ (class "site-post-meta")) ,publish-date))
+                           ,(if-let ((video-id (plist-get info :video)))
+                                (dw/embed-video video-id))
+                           ,(when pre-content pre-content)
+                           (div (@ (id "content"))
+                                (*RAW-STRING* ,content))))
+             ,@(unless exclude-footer
+                     (dw/site-footer)))))))
 
-            ,@(dw/site-footer info))))))
+(defun dw/org-html-template (contents info)
+  (dw/generate-page (org-export-data (plist-get info :title) info)
+                    contents
+                    info
+                    :publish-date (org-export-data (org-export-get-date info "%B %e, %Y") info)))
 
-;; Thanks Ashraz!
 (defun dw/org-html-link (link contents info)
   "Removes file extension and changes the path into lowercase file:// links."
-  (when (string= 'file (org-element-property :type link))
+  (when (and (string= 'file (org-element-property :type link))
+             (string= "org" (file-name-extension (org-element-property :path link))))
     (org-element-put-property link :path
                               (downcase
                                (file-name-sans-extension
@@ -230,10 +220,11 @@
       (format "<a href=\"%s\">%s</a>"
               (org-element-property :raw-link link)
               (org-element-property :raw-link link)))
-     (t (org-export-with-backend 'slimhtml link contents info)))))
-
-;; Make sure we have thread-last
-(require 'subr-x)
+     ((string-prefix-p "/" (org-element-property :raw-link link))
+      (format "<a href=\"%s\">%s</a>"
+              (org-element-property :raw-link link)
+              contents))
+     (t (org-export-with-backend 'html link contents info)))))
 
 (defun dw/make-heading-anchor-name (headline-text)
   (thread-last headline-text
@@ -273,41 +264,42 @@
      (when (and container (not (string= "" container)))
        (format "</%s>" (cl-subseq container 0 (cl-search " " container)))))))
 
+(defun dw/org-html-src-block (src-block _contents info)
+  (let* ((lang (org-element-property :language src-block))
+	       (code (org-html-format-code src-block info)))
+    (format "<pre>%s</pre>" (string-trim code))))
+
+(defun dw/org-html-special-block (special-block contents info)
+  "Transcode a SPECIAL-BLOCK element from Org to HTML.
+CONTENTS holds the contents of the block.  INFO is a plist
+holding contextual information."
+  (let* ((block-type (org-element-property :type special-block))
+         (attributes (org-export-read-attribute :attr_html special-block)))
+	  (format "<div class=\"%s center\">\n%s\n</div>"
+            block-type
+            (or contents
+                (if (string= block-type "cta") ""
+                  "")))))
+
 (org-export-define-derived-backend 'site-html 'html
   :translate-alist
   '((template . dw/org-html-template)
-     (link . dw/org-html-link)
-     (code . ox-slimhtml-verbatim)
-     (headline . dw/org-html-headline)
-     (section . org-html-section)
-     (quote-block . ca/slimhtml-quote-block)
-     (footnote-definition . org-html-footnote-definition)
-     (footnote-reference . org-html-footnote-reference))
+    (link . dw/org-html-link)
+    (src-block . dw/org-html-src-block)
+    (special-block . dw/org-html-special-block)
+    (headline . dw/org-html-headline))
   :options-alist
-  '((:page-type "PAGE-TYPE" nil nil t)
-    (:html-use-infojs nil nil nil)))
-
-;; quote block
-;; #+BEGIN_EXAMPLE
-;;   ,#+BEGIN_QUOTE                              # <blockquote>
-;;     quoted text                              # quoted text
-;;   ,#+END_QUOTE                                # </blockquote>
-;; #+END_EXAMPLE
-;; Source: https://github.com/balddotcat/ox-slimhtml/pull/6
-(defun ca/slimhtml-quote-block (quote-block contents info)
-  "Transcode QUOTE-BLOCK from Org to HTML.
-CONTENTS is the text of a #+BEGIN_QUOTE...#+END_QUOTE block.
-INFO is a plist holding contextual information."
-  (when contents
-    (format "<blockquote%s><p>%s</p></blockquote>"
-            (ox-slimhtml--attr quote-block) contents)))
+  '((:video "VIDEO" nil nil)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."
   (let ((article-path (get-article-output-path filename pub-dir)))
     (cl-letf (((symbol-function 'org-export-output-file-name)
                (lambda (extension &optional subtreep pub-dir)
-                 (concat article-path "index" extension))))
+                 ;; The 404 page is a special case, it must be named "404.html"
+                 (concat article-path
+                         (if (string= (file-name-nondirectory filename) "404.org") "404" "index")
+                         extension))))
       (org-publish-org-to 'site-html
                           filename
                           (concat "." (or (plist-get plist :html-extension)
@@ -315,46 +307,208 @@ INFO is a plist holding contextual information."
                           plist
                           article-path))))
 
-(defun dw/sitemap-entry (entry style project)
-  (format "<h4><em>%s</em> - <a href=\"%s\">%s</a></h4>"
-          (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))
-          (concat (file-name-sans-extension entry) "/")
-          (org-publish-find-title entry project)))
+(defun dw/publish-newsletter-page (plist filename pub-dir)
+  "Publish a newsletter .txt file to a simple HTML page."
+  (let* ((issue-name (file-name-sans-extension
+                      (file-name-nondirectory filename)))
+         (output-file (expand-file-name
+                       (concat issue-name ".html")
+                       pub-dir))
+         (contents (with-temp-buffer
+                     (insert-file-contents filename)
+                     (buffer-string))))
+    (with-temp-file output-file
+      (insert
+       (dw/generate-page
+        (concat "Issue "
+                (nth 2 (split-string issue-name "-")))
+        (format "<pre class=\"newsletter-text\">%s</pre>"
+                (replace-regexp-in-string
+                 "\\(http\\|https\\)://[^ \t\n\r<>\"']*[^ \t\n\r<>\".,;!?']"
+                 (lambda (match)
+                   (format "<a href=\"%s\">%s</a>" match match))
+                 contents))
+        '()
+        :exclude-header t
+        :exclude-footer t)))))
 
-(defun dw/generate-sitemap (title list)
-  (concat
-    "#+TITLE: " title "\n\n"
-    "#+BEGIN_EXPORT html\n"
-    (mapconcat (lambda (item)
-                 (car item))
-               (cdr list)
-               "\n")
-    "\n#+END_EXPORT\n"))
-
-(setq org-html-preamble  #'dw/site-header
-      org-html-postamble #'dw/site-footer
-      org-html-metadata-timestamp-format "%Y-%m-%d"
-      org-html-checkbox-type 'site-html
-      org-html-html5-fancy nil
+(setq org-publish-use-timestamps-flag t
+      org-publish-timestamp-directory "./.org-cache/"
+      org-export-with-section-numbers nil
+      org-export-use-babel nil
+      org-export-with-smart-quotes t
+      org-export-with-sub-superscripts nil
+      org-export-with-tags 'not-in-toc
       org-html-htmlize-output-type 'css
+      org-html-prefer-user-labels t
+      org-html-link-home dw/site-url
+      org-html-link-use-abs-url t
+      org-html-link-org-files-as-html t
+      org-html-html5-fancy t
       org-html-self-link-headlines t
-      org-html-validation-link nil
-      org-html-doctype "html5")
+      org-export-with-toc nil
+      make-backup-files nil)
+
+(defun dw/format-live-stream-entry (entry style project)
+  "Format posts with author and published data in the index page."
+  (cond ((not (directory-name-p entry))
+         (format "[[file:%s][%s]] - %s"
+                 entry
+                 (org-publish-find-title entry project)
+                 (format-time-string "%B %d, %Y"
+                                     (org-publish-find-date entry project))))
+        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
+        (t entry)))
+
+(defun dw/format-news-entry (entry style project)
+  "Format posts with author and published data in the index page."
+  (cond ((not (directory-name-p entry))
+         (format "[[file:%s][%s]] - %s · %s"
+                 entry
+                 (org-publish-find-title entry project)
+                 (car (org-publish-find-property entry :author project))
+                 (format-time-string "%B %d, %Y"
+                                     (org-publish-find-date entry project))))
+        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
+        (t entry)))
+
+(defun dw/news-sitemap (title files)
+  (format "#+title: %s\n\n%s"
+          title
+          (mapconcat (lambda (file)
+                       (format "- %s\n" file))
+                     (cadr files)
+                     "\n")))
+
+(defun dw/rss-extract-title (html-file)
+  "Extract the title from an HTML file."
+  (with-temp-buffer
+    (insert-file-contents html-file)
+    (let ((dom (libxml-parse-html-region (point-min) (point-max))))
+      (dom-text (car (dom-by-class dom "site-post-title"))))))
+
+(defun dw/rss-extract-date (html-file)
+  "Extract the post date from an HTML file."
+  (with-temp-buffer
+    (insert-file-contents html-file)
+    (let* ((dom (libxml-parse-html-region (point-min) (point-max)))
+           (date-string (dom-text (car (dom-by-class dom "site-post-meta"))))
+           (parsed-date (parse-time-string date-string))
+           (day (nth 3 parsed-date))
+           (month (nth 4 parsed-date))
+           (year (nth 5 parsed-date)))
+      ;; NOTE: Hardcoding this at 8am for now
+      (encode-time 0 0 8 day month year))))
+
+;(defun dw/rss-extract-summary (html-file)
+;  )
+
+(setq webfeeder-title-function #'dw/rss-extract-title
+      webfeeder-date-function #'dw/rss-extract-date)
 
 (setq org-publish-project-alist
-      (list
-       (list "cfeeley:main"
-             :recursive t
-             :base-extension "org"
-             :base-directory "./content"
-             :publishing-function '(org-html-publish-to-html)
-             :publishing-directory "./public"
-             :with-timestamps t
-             :email "git@cfeeley.org"
-             :with-email t
-             :with-title nil)
-       ))
+      (list '("cfeeley:main"
+              :recursive t
+              :base-directory "./content"
+              :base-extension "org"
+              :publishing-directory "./public"
+              :publishing-function org-html-publish-to-html
+              :with-title nil
+              :with-timestamps nil)
+            '("cfeeley:faq"
+              :base-directory "./content/faq"
+              :base-extension "org"
+              :publishing-directory "./public/faq"
+              :publishing-function org-html-publish-to-html
+              :with-title nil
+              :with-timestamps nil)
+            '("cfeeley:assets"
+              :base-directory "./assets"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|woff2\\|ttf"
+              :publishing-directory "./public"
+              :recursive t
+              :publishing-function org-publish-attachment)
+            '("cfeeley:live-streams"
+              :base-directory "./content/live-streams"
+              :base-extension "org"
+              :publishing-directory "./public/live-streams"
+              :publishing-function org-html-publish-to-html
+              :auto-sitemap t
+              :sitemap-filename "../live-streams.org"
+              :sitemap-title "Live Streams"
+              :sitemap-format-entry dw/format-live-stream-entry
+              :sitemap-style list
+              :sitemap-sort-files anti-chronologically
+              :with-title nil
+              :with-timestamps nil)
+            '("cfeeley:news"
+              :base-directory "./content/news"
+              :base-extension "org"
+              :publishing-directory "./public/news"
+              :publishing-function org-html-publish-to-html
+              :auto-sitemap t
+              :sitemap-filename "../news.org"
+              :sitemap-title "News"
+              :sitemap-format-entry dw/format-news-entry
+              :sitemap-style list
+              ;; :sitemap-function dw/news-sitemap
+              :sitemap-sort-files anti-chronologically
+              :with-title nil
+              :with-timestamps nil)
+            '("cfeeley:newsletter"
+              :base-directory "./content/newsletter"
+              :base-extension "txt"
+              :publishing-directory "./public/newsletter"
+              :publishing-function dw/publish-newsletter-page)
+            '("cfeeley:videos"
+              :base-directory "./content/videos"
+              :base-extension "org"
+              :recursive t
+              :publishing-directory "./public"
+              :publishing-function org-html-publish-to-html
+              :with-title nil
+              :with-timestamps nil)))
+
+;; TODO: Generate a _redirects file instead once Codeberg Pages releases a new version
+(defun dw/generate-redirects (redirects)
+  (dolist (redirect redirects)
+    (let ((output-path (concat "./public/" (car redirect) "/index.html"))
+          (redirect-url (concat dw/site-url "/" (cdr redirect) "/")))
+      (make-directory (file-name-directory output-path) t)
+      (with-temp-file output-path
+        (insert
+         (dw/generate-page "Redirecting..."
+                           (concat "You are being redirected to "
+                                   "<a href=\"" redirect-url "\">" redirect-url "</a>")
+                           '()
+                           :head-extra
+                           (concat "<meta http-equiv=\"refresh\" content=\"0; url='" redirect-url "'\"/>")))))))
 
 (defun dw/publish ()
+  "Publish the entire site."
   (interactive)
-  (org-publish "cfeeley:main" t))
+  (org-publish-all (string-equal (or (getenv "FORCE")
+                                     (getenv "CI"))
+                                 "true"))
+
+  (webfeeder-build "rss/news.xml"
+                   "./public"
+                   dw/site-url
+                   (let ((default-directory (expand-file-name "./public/")))
+                     (remove "news/index.html"
+                             (directory-files-recursively "news"
+                                                          ".*\\.html$")))
+                   :builder 'webfeeder-make-rss
+                   :title "cfeeley.org feed"
+                   :description "Latest updates from cfeeley.org"
+                   :author "Connor Feeley")
+
+  (dw/generate-redirects '(("support-the-channel" . "how-to-help")
+                           ("videos" . "guides")))
+
+  ;; Copy the domains file to ensure the custom domain resolves
+  (copy-file ".domains" "public/.domains" t)
+)
+
+(provide 'publish)
+;;; publish.el ends here

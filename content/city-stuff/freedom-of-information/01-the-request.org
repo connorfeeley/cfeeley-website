@@ -1,7 +1,6 @@
-#+title: /city stuff /freedom of information
-* Part 1: The Request
-
-This is the exact text of the FOI request I sent [fn:1] :
+#+title: /freedom of information /part 1: the request
+#+date: 2023-11-27
+This is the exact text of the FOI request I sent[fn:1]:
 #+begin_quote
 City Clerk’s Office
 
@@ -43,7 +42,5 @@ Toronto, Ontario, <postal code>
 
 <phone number> | <email>
 #+end_quote
-
-* Footnotes
 
 [fn:1] Well, I obviously redacted my personal information.

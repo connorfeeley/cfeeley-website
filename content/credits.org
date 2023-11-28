@@ -1,0 +1,9 @@
+#+title: Credits and Attribution
+
+This site uses some content created by others under permissive licenses.
+
+Here is the attribution for these works:
+
+* Site Generation
+
+- =publish.el= from SystemCrafters
