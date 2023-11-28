@@ -13,7 +13,7 @@
         let
           pkgs = import nixpkgs { inherit system; };
           emacsForPublish = ((pkgs.emacsPackagesFor pkgs.emacs29).emacsWithPackages (
-            epkgs: with epkgs; [ esxml webfeeder ]
+            epkgs: with epkgs; [ esxml htmlize webfeeder ]
           ));
         in
         with pkgs;

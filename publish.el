@@ -47,13 +47,6 @@
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
 ;; Initialize the package system
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; Install use-package
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 (require 'use-package)
 
 ;; Unfortunately this is necessary for now...
@@ -61,10 +54,6 @@
 
 ;; Install other dependencies
 (use-package esxml
-  :pin melpa-stable
-  :ensure t)
-
-(use-package ox-gemini
   :ensure t)
 
 (use-package htmlize
@@ -143,7 +132,7 @@
             (div (@ (class "container"))
                  (div (@ (class "row"))
                       (div (@ (class "col-sm col-md text-sm-left text-md-right text-lg-right text-xl-right"))
-                           (p "Made with " ,(plist-get info :creator))
+                           (p "Made with " (*RAW-STRING* ,(plist-get info :creator)))
                            ;; (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy"))
                            (p "Contact: " (code () "git@cfeeley.org"))
                            ))))))
@@ -202,7 +191,7 @@
                                     ,(org-export-data (plist-get info :title) info))
                                 (p (@ (class "blog-post-meta"))
                                    ,(org-export-data (org-export-get-date info "%B %e, %Y") info))
-                                ,contents
+                                (*RAW-STRING* ,contents)
                                 ,(let ((tags (plist-get info :filetags)))
                                    (when (and tags (> (list-length tags) 0))
                                      `(p (@ (class "blog-post-tags"))
@@ -290,13 +279,13 @@
      (link . dw/org-html-link)
      (code . ox-slimhtml-verbatim)
      (headline . dw/org-html-headline)
+     (section . org-html-section)
      (quote-block . ca/slimhtml-quote-block)
-     ;; (footnote-definition . org-html-footnote-definition)
-     ;; (footnote-reference . org-html-footnote-reference)
-     )
+     (footnote-definition . org-html-footnote-definition)
+     (footnote-reference . org-html-footnote-reference))
   :options-alist
   '((:page-type "PAGE-TYPE" nil nil t)
-     (:html-use-infojs nil nil nil)))
+    (:html-use-infojs nil nil nil)))
 
 ;; quote block
 ;; #+BEGIN_EXAMPLE
@@ -325,14 +314,6 @@ INFO is a plist holding contextual information."
                                           "html"))
                           plist
                           article-path))))
-
-(defun dw/org-gemini-publish-to-gemini (plist filename pub-dir)
-  (let ((article-path (get-article-output-path filename pub-dir)))
-    (cl-letf (((symbol-function 'org-export-output-file-name)
-               (lambda (extension &optional subtreep pub-dir)
-                 (concat article-path "index" extension))))
-      (org-publish-org-to
-       'gemini filename ".gmi" plist pub-dir))))
 
 (defun dw/sitemap-entry (entry style project)
   (format "<h4><em>%s</em> - <a href=\"%s\">%s</a></h4>"
