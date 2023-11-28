@@ -99,7 +99,7 @@
              path (or desc "")))))
 
 (setq dw/site-title   "~ cfeeley")
-(setq dw/site-tagline "Thoughts on things.")
+(setq dw/site-tagline "")
 
 (setq org-publish-use-timestamps-flag t
       org-publish-timestamp-directory "./.org-cache/"
