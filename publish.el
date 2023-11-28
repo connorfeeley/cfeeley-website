@@ -1,23 +1,15 @@
-;;; publish.el --- Build systemcrafters.cc
+;;; publish.el --- Build systemcrafters.net
 
-;; Copyright (C) 2018 Pierre Neidhardt <mail@ambrevar.xyz>
-;; Copyright (C) 2021 David Wilson <david@daviwil.com>
+;; Copyright (C) 2021, 2023 David Wilson <david@systemcrafters.net>
 
-;; Author: David Wilson <david@daviwil.com>
-;; Maintainer: David Wilson <david@daviwil.com>
-;; URL: https://sr.ht/~systemcrafters/site
+;; Author: David Wilson <david@systemcrafters.net>
+;; Maintainer: David Wilson <david@systemcrafters.net>
+;; URL: https://codeberg.org/SystemCrafters/systemcrafters.net
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "26.1"))
+;; Package-Requires: ((emacs "28.2"))
 ;; Keywords: hypermedia, blog, feed, rss
 
 ;; This file is not part of GNU Emacs.
-
-;; This file is loosely based on Pierre Neidhardt's publish.el, here's his
-;; authorship details:
-
-;; Author: Pierre Neidhardt <mail@ambrevar.xyz>
-;; Maintainer: Pierre Neidhardt <mail@ambrevar.xyz>
-;; URL: https://gitlab.com/Ambrevar/ambrevar.gitlab.io
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Docs License as published by
@@ -32,8 +24,10 @@
 ;; You should have received a copy of the GNU General Docs License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;; Usage:
+;;; Usage:
 ;; emacs -Q --batch -l ./publish.el --funcall dw/publish
+
+;;; Code:
 
 ;; Initialize package sources
 (require 'package)
