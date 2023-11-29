@@ -20,16 +20,16 @@ Bike Share Toronto operates at a loss of a few million per year ($2.6 million in
 The TTC has a subsidy per trip of $4.08[fn:4], for comparison.
 
 
-The system is *really* great, in a lot of ways.
+Look, the system is genuinely great, in a lot of ways.
 
-But that isn't the point of this article - the point of this article is exploring the ways it *isn't*.
+# FIXME: This is repetative.
+But that isn't the point of this article - the point of this article is exploring the ways that it isn't.
 Now that I use it as my primary way of getting around, I'm seeing some cracks showing in big ways.
 
 * Let's Talk About the E-Bikes
-The e-bike fleet expanded massively over the last year, going from 525 e-bikes at the end of 2022[fn:5] to 1800 at present[fn:6].
+The e-bike fleet expanded massively over the last year, going from 525 e-bikes at the end of 2022[fn:5] to >1800 at present[fn:6].
 
-There appear to be two models in use:
-- [[https://www.pbsc.com/products#eFit][E-Fit]] and what's referred to as "E-Fit G5" (which appears to simply be a newer version of the E-Fit).
+There appear to be two models in use: the [[https://www.pbsc.com/products#eFit][E-Fit]], and the "E-Fit G5" (which appears to simply be a newer version of the E-Fit).
 
 Of course, e-bikes need to be charged.
 
