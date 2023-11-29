@@ -1,0 +1,11 @@
+#+title: Freedom of Information Series: Part 1
+#+author: Connor Feeley
+#+date: 2023-11-29
+#+kind: news
+
+I started a series of articles ostensibly about Toronto's public bike share program.
+
+At least, it's ostensibly about Bike Share Toronto.
+It's also equal parts about e-bikes, civic governance, and freedom of information requests.
+
+Part 1 is here: [[/city-stuff/freedom-of-information/toronto-foi-request][1: Making a FOI Request to the City of Toronto]] (though it's still a work in progress).

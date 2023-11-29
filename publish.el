@@ -428,19 +428,6 @@ holding contextual information."
               :publishing-directory "./public"
               :recursive t
               :publishing-function org-publish-attachment)
-            '("cfeeley:live-streams"
-              :base-directory "./content/live-streams"
-              :base-extension "org"
-              :publishing-directory "./public/live-streams"
-              :publishing-function org-html-publish-to-html
-              :auto-sitemap t
-              :sitemap-filename "../live-streams.org"
-              :sitemap-title "Live Streams"
-              :sitemap-format-entry dw/format-live-stream-entry
-              :sitemap-style list
-              :sitemap-sort-files anti-chronologically
-              :with-title nil
-              :with-timestamps nil)
             '("cfeeley:news"
               :base-directory "./content/news"
               :base-extension "org"
@@ -453,19 +440,6 @@ holding contextual information."
               :sitemap-style list
               ;; :sitemap-function dw/news-sitemap
               :sitemap-sort-files anti-chronologically
-              :with-title nil
-              :with-timestamps nil)
-            '("cfeeley:newsletter"
-              :base-directory "./content/newsletter"
-              :base-extension "txt"
-              :publishing-directory "./public/newsletter"
-              :publishing-function dw/publish-newsletter-page)
-            '("cfeeley:videos"
-              :base-directory "./content/videos"
-              :base-extension "org"
-              :recursive t
-              :publishing-directory "./public"
-              :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)))
 
