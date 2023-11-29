@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-{ stdenv, git, emacsForPublish }:
+{ lib, stdenv, git, emacsForPublish, publishUrl }:
 
 stdenv.mkDerivation {
   name = "cfeeley-website";
@@ -10,6 +10,11 @@ stdenv.mkDerivation {
   src = ../../.;
 
   buildInputs = [ emacsForPublish git ];
+
+  patchPhase = lib.optionalString (publishUrl != null) ''
+    substituteInPlace publish.el --replace "http://localhost:8080" "${publishUrl}"
+  '';
+
   buildPhase = ''
     mkdir -p $out
     emacs -Q --batch -l publish.el --funcall dw/publish
