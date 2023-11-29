@@ -33,7 +33,7 @@ There appear to be two models in use: the [[https://www.pbsc.com/products#eFit][
 
 Of course, e-bikes need to be charged.
 
-* 2024 Equipment Purchase
+* COMMENT 2024 Equipment Purchase
 #+begin_quote
 In 2024, Bike Share Toronto will add 70 solar stations, 460 electric charging docks, and 530 iconic bikes to the system. These investments will grow the current system to 870 stations, 45 electric charging stations (1,160 e-docks) and 9,500 bikes, including 7,585 iconic bikes and 1,912 e-bikes.
 #+end_quote
@@ -64,6 +64,7 @@ I don't drive anymore and I'll go to fairly extreme lengths to avoid rideshare c
 ** Links
 - [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240758.pdf][Bike Share Toronto 2024 Equipment Purchase]] (November 9, 2023)
 - [[https://www.toronto.ca/legdocs/mmis/2022/pa/bgrd/backgroundfile-229492.pdf][Bike Share Toronto 2023 Equipment Purchase]] (September 15, 2023)
+- [[https://factchecktoronto.ca/how-to-file-a-foi/][How to File a Freedom of Information Request – FactCheckToronto]]
 
 * Footnotes
 [fn:1] Rebalancing is when the system operator redistributes bikes from full or nearly-full stations to emptier ones, ensuring that there's a reasonable number of bikes and docks at each station.
