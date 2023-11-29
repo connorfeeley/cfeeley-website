@@ -1,0 +1,79 @@
+#+title: Making a Freedom of Information Request to the City of Toronto
+#+author: Connor Feeley
+#+date: 2023-11-27
+
+/So, you want to make a freedom of information request to the City of Toronto./
+
+# I've been working on a [[/tech][tool]]
+
+I'm a really big fan of Toronto's public Bike Share program.
+It's (ironically) managed by the Toronto Parking Authority, while day-to-day operations (maintenance, station installs, bike rebalancing[fn:1]) are contracted out to Shift Transit.
+Overall, I think the system is pretty well run.
+
+* Value
+It's good value for money - I have the ($120/year) 45-minute membership and it's become my primary transportation method.
+I've spent about $400 less on Presto this year compared to 2022.
+
+
+More importantly, the bike share program is great value /for the city/, especially when considered in the context of Toronto's current financial Armageddon.
+Bike Share Toronto operates at a loss of a few million per year ($2.6 million in 2023[fn:2]), or $0.67 per ride[fn:3].
+The TTC has a subsidy per trip of $4.08[fn:4], for comparison.
+
+
+The system is *really* great, in a lot of ways.
+
+But that isn't the point of this article - the point of this article is exploring the ways it *isn't*.
+Now that I use it as my primary way of getting around, I'm seeing some cracks showing in big ways.
+
+* Let's Talk About the E-Bikes
+The e-bike fleet expanded massively over the last year, going from 525 e-bikes at the end of 2022[fn:5] to 1800 at present[fn:6].
+
+There appear to be two models in use:
+- [[https://www.pbsc.com/products#eFit][E-Fit]] and what's referred to as "E-Fit G5" (which appears to simply be a newer version of the E-Fit).
+
+Of course, e-bikes need to be charged.
+
+* 2024 Equipment Purchase
+#+begin_quote
+In 2024, Bike Share Toronto will add 70 solar stations, 460 electric charging docks, and 530 iconic bikes to the system. These investments will grow the current system to 870 stations, 45 electric charging stations (1,160 e-docks) and 9,500 bikes, including 7,585 iconic bikes and 1,912 e-bikes.
+#+end_quote
+
+#+begin_quote
+It should be noted that TPA is purchasing 300 electric charging docks as TPA currently has 160 charging docks in inventory. Together, the 460 electric charging docks will be installed and activated in 2024. The equipment purchase costs exclude the capital costs to install the electric charging docks, which are estimated at $1.5 million.
+#+end_quote
+
+#+begin_quote
+Although this would make Bike Share Toronto a North American leader in e-bike charging infrastructure, industry best practices suggest that 20 percent of all Bike Share docks (e-stations and iconic stations) should be electrified. In order to achieve this threshold, a further 1,500 e-docks would be required at an estimated total cost of $11.3 million, including $4.5 million for equipment and $6.8 million for installation. Further build out of the e-docks is included in TPA’s proposed 2024 – 2026 Capital Budget and Management will accelerate, where the opportunity presents.
+#+end_quote
+
+#+begin_quote
+Consideration has been given to the option of purchasing e-bikes exclusively, but currently, it is urgent that the challenge of system rebalancing be addressed. Ensuring a well-balanced distribution of bikes throughout the network is essential to providing a seamless user experience. In addition, as the network expands into Neighbourhood Improvement Areas, TPA wants to ensure equitable access to annual members who may find the additional e-bike cost per minute a barrier. A balanced mix of iconic and ebikes is consistent with the approach being taken by other Bike Share programs, where typically, e-bikes make up 20 percent of fleets.
+#+end_quote
+
+* COMMENT Notes
+- BST subsidy per ride (2023): $0.67
+  + Source: [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240804.pdf][Bike Share Toronto 2023 Business Review (p15)]]
+- TTC subsidy per ride (2022): $4.08 [[https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/Transparency-and-accountability/Reports/Annual-Reports/TTC_AnnualReport_2022_final.pdf?rev=b087337731dc44f688563cdbde4d7c2f][2022 Annual Report (p58)]]
+- Jun 16: Wellesley Station reinstalled
+- Since the e-bikes were included (for free) with a membership, if you managed to get one you could theoretically hang on to it for the entire day so long as you docked
+** Uncollected Thoughts
+*** TTC/Presto spending
+- displacing around $500 of my spending.
+- in 2022 I forked over about $920 to the TTC, while in 2023 I've only spent about $520 (to date).
+I don't drive anymore and I'll go to fairly extreme lengths to avoid rideshare companies
+** Links
+- [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240758.pdf][Bike Share Toronto 2024 Equipment Purchase]] (November 9, 2023)
+- [[https://www.toronto.ca/legdocs/mmis/2022/pa/bgrd/backgroundfile-229492.pdf][Bike Share Toronto 2023 Equipment Purchase]] (September 15, 2023)
+
+* Footnotes
+[fn:1] Rebalancing is when the system operator redistributes bikes from full or nearly-full stations to emptier ones, ensuring that there's a reasonable number of bikes and docks at each station.
+
+[fn:2] [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240804.pdf][Bike Share Toronto 2023 Business Review (p14)]]
+
+[fn:3] [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240804.pdf][Bike Share Toronto 2023 Business Review (p15)]]
+
+[fn:4] [[https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/Transparency-and-accountability/Reports/Annual-Reports/TTC_AnnualReport_2022_final.pdf?rev=b087337731dc44f688563cdbde4d7c2f][TTC 2022 Annual Report (p58)]]
+
+[fn:5] [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-234745.pdf][Modernizing Bike Share Toronto Rate Structure]] and [[https://www.thestar.com/news/gta/city-hall/toronto-adds-electric-bicycles-to-bike-share-fleet-at-no-extra-cost-to-users/article_56ee4c3b-a589-577d-addc-16c5263c0e7e.html][Toronto adds electric bicycles to bike-share fleet — at no extra cost to users]]
+
+[fn:6] [[https://web.archive.org/web/20231128210754/https://bikesharetoronto.com/e-bikes/][E-Bikes - Bike Share Toronto | Bike Share Toronto]]

@@ -1,3 +1,4 @@
 #+title: /city stuff
 * [[/city-stuff/freedom-of-information/][Getting City of Toronto Records with Freedom of Information Requests]]
-** [[/city-stuff/freedom-of-information/01-the-request][Part 1: The Request]]
+** [[/city-stuff/freedom-of-information/toronto-foi-request][1: Making a FOI Request to the City of Toronto]]
+** [[/city-stuff/freedom-of-information/the-request][2: The Request]]
