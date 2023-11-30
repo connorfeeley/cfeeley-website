@@ -307,31 +307,6 @@ holding contextual information."
                           plist
                           article-path))))
 
-(defun dw/publish-newsletter-page (plist filename pub-dir)
-  "Publish a newsletter .txt file to a simple HTML page."
-  (let* ((issue-name (file-name-sans-extension
-                      (file-name-nondirectory filename)))
-         (output-file (expand-file-name
-                       (concat issue-name ".html")
-                       pub-dir))
-         (contents (with-temp-buffer
-                     (insert-file-contents filename)
-                     (buffer-string))))
-    (with-temp-file output-file
-      (insert
-       (dw/generate-page
-        (concat "Issue "
-                (nth 2 (split-string issue-name "-")))
-        (format "<pre class=\"newsletter-text\">%s</pre>"
-                (replace-regexp-in-string
-                 "\\(http\\|https\\)://[^ \t\n\r<>\"']*[^ \t\n\r<>\".,;!?']"
-                 (lambda (match)
-                   (format "<a href=\"%s\">%s</a>" match match))
-                 contents))
-        '()
-        :exclude-header t
-        :exclude-footer t)))))
-
 (setq org-publish-use-timestamps-flag t
       org-publish-timestamp-directory "./.org-cache/"
       org-export-with-section-numbers nil
@@ -348,17 +323,6 @@ holding contextual information."
       org-html-self-link-headlines t
       org-export-with-toc nil
       make-backup-files nil)
-
-(defun dw/format-live-stream-entry (entry style project)
-  "Format posts with author and published data in the index page."
-  (cond ((not (directory-name-p entry))
-         (format "[[file:%s][%s]] - %s"
-                 entry
-                 (org-publish-find-title entry project)
-                 (format-time-string "%B %d, %Y"
-                                     (org-publish-find-date entry project))))
-        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
-        (t entry)))
 
 (defun dw/format-news-entry (entry style project)
   "Format posts with author and published data in the index page."
