@@ -27,11 +27,18 @@ But that isn't the point of this article - the point of this article is explorin
 Now that I use it as my primary way of getting around, I'm seeing some cracks showing in big ways.
 
 * Let's Talk About the E-Bikes
-The e-bike fleet expanded massively over the last year, going from 525 e-bikes at the end of 2022[fn:5] to >1800 at present[fn:6].
+The e-bike fleet expanded massively over the last year, going from 525 e-bikes at the end of 2022[fn:5] to over 1800 at present[fn:6].
 
-There appear to be two models in use: the [[https://www.pbsc.com/products#eFit][E-Fit]], and the "E-Fit G5" (which appears to simply be a newer version of the E-Fit).
+There appear to be two models in use: the [[https://www.pbsc.com/products#eFit][E-Fit]], and the "E-Fit G5" - which appears to simply be a newer version of the E-Fit (with a fancy digital speedometer and slightly strangely-angled brake levers).
 
 Of course, e-bikes need to be charged.
+
+Fortunately, the bike manufacturer (PBSC) has a nifty patent[fn:7] on charging e-bikes through the station docking connector.
+/Un/-fortunately, out of our ~750 stations, precisely 20 are charging stations ([[*List of Charging Stations][see list]])
+
+Unless someone happens to dock an e-bike at one of those stations, those e-bikes run out of charge and then some poor sap has to drive around at 1 AM and load a bunch of e-bikes into a rental van[fn:8] so they can be charged somewhere.
+
+
 
 * COMMENT 2024 Equipment Purchase
 #+begin_quote
@@ -50,6 +57,38 @@ Although this would make Bike Share Toronto a North American leader in e-bike ch
 Consideration has been given to the option of purchasing e-bikes exclusively, but currently, it is urgent that the challenge of system rebalancing be addressed. Ensuring a well-balanced distribution of bikes throughout the network is essential to providing a seamless user experience. In addition, as the network expands into Neighbourhood Improvement Areas, TPA wants to ensure equitable access to annual members who may find the additional e-bike cost per minute a barrier. A balanced mix of iconic and ebikes is consistent with the approach being taken by other Bike Share programs, where typically, e-bikes make up 20 percent of fleets.
 #+end_quote
 
+* Appendix
+** List of Charging Stations
+:PROPERTIES:
+:CUSTOM_ID: list-of-charging-stations
+:END:
+/As of 2023-11-30./
+
+#+name: charging-stations-table
+ |        <r> | <l>                               | <l>      |
+ | Station ID | Name                              | Capacity |
+ |------------+-----------------------------------+----------|
+ |       7001 | Wellesley Station Green P         | 23       |
+ |       7050 | Richmond St E / Jarvis St Green P | 16       |
+ |       7385 | 20 Charles St E                   | 22       |
+ |       7657 | 1 Market St - SMART               | 19       |
+ |       7668 | Simcoe St / Dundas St W - SMART   | 20       |
+ |       7681 | 25 Booth Ave                      | 23       |
+ |       7689 | 20 Eaton Ave                      | 26       |
+ |       7692 | 85 Lee Ave                        | 26       |
+ |       7702 | 111 Broadview Ave                 | 18       |
+ |       7708 | 101 Cedarvale Ave                 | 28       |
+ |       7710 | 11 Spadina Rd                     | 18       |
+ |       7729 | 265 Armadale Ave                  | 30       |
+ |       7730 | 800 Fleet St (South)              | 43       |
+ |       7757 | The Well                          | 19       |
+ |       7789 | 75 Holly St                       | 23       |
+ |       7820 | 1612 Danforth Ave                 | 15       |
+ |       7865 | 2700 Eglinton Ave W               | 43       |
+ |       7866 | 695 Lansdowne Ave                 | 23       |
+ |       7867 | 15 Price St                       | 15       |
+ |       7887 | 800 Fleet St (North)              | 43       |
+
 * COMMENT Notes
 - BST subsidy per ride (2023): $0.67
   + Source: [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240804.pdf][Bike Share Toronto 2023 Business Review (p15)]]
@@ -66,7 +105,9 @@ I don't drive anymore and I'll go to fairly extreme lengths to avoid rideshare c
 - [[https://www.toronto.ca/legdocs/mmis/2022/pa/bgrd/backgroundfile-229492.pdf][Bike Share Toronto 2023 Equipment Purchase]] (September 15, 2023)
 - [[https://factchecktoronto.ca/how-to-file-a-foi/][How to File a Freedom of Information Request – FactCheckToronto]]
 
-* Footnotes
+* <<footnotes>>
+# Naming this as a '<footnotes>' anchor hides the heading without hiding the contents - export creates a 'Footnotes' header anyways.
+
 [fn:1] Rebalancing is when the system operator redistributes bikes from full or nearly-full stations to emptier ones, ensuring that there's a reasonable number of bikes and docks at each station.
 
 [fn:2] [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-240804.pdf][Bike Share Toronto 2023 Business Review (p14)]]
@@ -78,3 +119,5 @@ I don't drive anymore and I'll go to fairly extreme lengths to avoid rideshare c
 [fn:5] [[https://www.toronto.ca/legdocs/mmis/2023/pa/bgrd/backgroundfile-234745.pdf][Modernizing Bike Share Toronto Rate Structure]] and [[https://www.thestar.com/news/gta/city-hall/toronto-adds-electric-bicycles-to-bike-share-fleet-at-no-extra-cost-to-users/article_56ee4c3b-a589-577d-addc-16c5263c0e7e.html][Toronto adds electric bicycles to bike-share fleet — at no extra cost to users]]
 
 [fn:6] [[https://web.archive.org/web/20231128210754/https://bikesharetoronto.com/e-bikes/][E-Bikes - Bike Share Toronto | Bike Share Toronto]]
+
+[fn:7] [[https://www.ic.gc.ca/opic-cipo/cpd/eng/patent/3166421/summary.html][Patent 3166421: SYSTEM AND METHOD FOR RECHARGING AN ELECTRIC VEHICLE]]
