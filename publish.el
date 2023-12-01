@@ -106,7 +106,8 @@
                             (nav (@ (class "nav"))
                               (a (@ (class "nav-link") (href "/")) "home") " "
                               (a (@ (class "nav-link") (href "/city-stuff")) "/city stuff") " "
-                              (a (@ (class "nav-link") (href "/tech")) "/tech") " "))))))))
+                              (a (@ (class "nav-link") (href "/tech")) "/tech") " "
+                              (a (@ (class "nav-link") (href "/news")) "/news") " "))))))))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
