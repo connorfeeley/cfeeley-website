@@ -1,4 +1,4 @@
-#+title: Making a Freedom of Information Request to the City of Toronto
+#+title: The Good, the Bad, and the E-Bike
 #+author: Connor Feeley
 #+date: 2023-11-27
 
@@ -36,8 +36,21 @@ Of course, e-bikes need to be charged.
 Fortunately, the bike manufacturer (PBSC) has a nifty patent[fn:7] on charging e-bikes through the station docking connector.
 /Un/-fortunately, out of our ~750 stations, precisely 20 are charging stations ([[*List of Charging Stations][see list]])
 
-Unless someone happens to dock an e-bike at one of those stations, those e-bikes run out of charge and then some poor sap has to drive around at 1 AM and load a bunch of e-bikes into a rental van[fn:8] so they can be charged somewhere.
+Unless someone happens to dock an e-bike at one of those stations, those e-bikes run out of charge and then some poor sap has to drive around at 1 AM and load a bunch of e-bikes into a rental van so that they can be charged somewhere.
 
+I'm assuming there's a warehouse somewhere with hundreds of chargers where the e-bikes get taken to sleep.
+I don't actually know this for sure (and nor have I have seen reference to such a place existing) - but who would buy close to 2000 e-bikes without having a way to charge them?
+
+* The Bad
+
+/Time for a quick detour./
+
+Around the start of June the station outside my partner's place was upgraded to a charging station.
+Cool - surely that means there's gonna be a higher chance I'll be able to snag an e-bike!
+Especially since at the same time they added ~50% more docks.
+
+My partner's place is actually uphill (/way/ uphill) from my place so there's really no reason for me to take an e-bike on the way home - though I will go to great lengths to track down an e-bike on the way /to/ their place.
+So I was honestly more stoked about the extra docks, because it's pretty annoying arriving at your destination, finding all the docks full, and then having to trek 20 minutes out of your way to go find an open dock.
 
 
 * COMMENT 2024 Equipment Purchase
@@ -121,3 +134,4 @@ I don't drive anymore and I'll go to fairly extreme lengths to avoid rideshare c
 [fn:6] [[https://web.archive.org/web/20231128210754/https://bikesharetoronto.com/e-bikes/][E-Bikes - Bike Share Toronto | Bike Share Toronto]]
 
 [fn:7] [[https://www.ic.gc.ca/opic-cipo/cpd/eng/patent/3166421/summary.html][Patent 3166421: SYSTEM AND METHOD FOR RECHARGING AN ELECTRIC VEHICLE]]
+
