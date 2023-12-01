@@ -1,0 +1,6 @@
+#+title: Getting City of Toronto Records with Freedom of Information Requests
+#+author: Connor Feeley
+#+date: 2023-12-01
+
+* [[/city-stuff/freedom-of-information/toronto-foi-request][1: The Good, the Bad, and the E-Bike]]
+* [[/city-stuff/freedom-of-information/the-request][2: The Request]]
