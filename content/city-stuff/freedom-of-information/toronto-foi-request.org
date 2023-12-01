@@ -2,6 +2,10 @@
 #+author: Connor Feeley
 #+date: 2023-11-27
 
+#+begin_quote
+Article is incomplete - check back later!
+#+end_quote
+
 /So, you want to make a freedom of information request to the City of Toronto./
 
 # I've been working on a [[/tech][tool]]
@@ -51,7 +55,6 @@ Especially since at the same time they added ~50% more docks.
 
 My partner's place is actually uphill (/way/ uphill) from my place so there's really no reason for me to take an e-bike on the way home - though I will go to great lengths to track down an e-bike on the way /to/ their place.
 So I was honestly more stoked about the extra docks, because it's pretty annoying arriving at your destination, finding all the docks full, and then having to trek 20 minutes out of your way to go find an open dock.
-
 
 * COMMENT 2024 Equipment Purchase
 #+begin_quote
