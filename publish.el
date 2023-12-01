@@ -176,7 +176,7 @@
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
             (script (@ (defer "defer")
-                       (data-goatcounter "cfeeley.org")
+                       (data-goatcounter "stats.cfeeley.org")
                        (src "https://stats.cfeeley.org/count.js"))
                     ;; Empty string to cause a closing </script> tag
                     "")
