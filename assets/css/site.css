@@ -470,3 +470,7 @@ img.image-export {
   width: 100%;
   height: auto;
 }
+
+.org-src-container {
+    font-size: 1rem;
+}
