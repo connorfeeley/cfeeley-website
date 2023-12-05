@@ -119,7 +119,7 @@
                                    (a (@ (href ,(concat dw/site-url "/credits/"))) "Credits")
                                    " · "
                                    (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Feeds"))
-                             (p "© 2023 Connor Feeley"))
+                             (p "© 2023 Connor Feeley | contact@cfeeley.org"))
                            )))))
 
 (defun get-article-output-path (org-file pub-dir)
