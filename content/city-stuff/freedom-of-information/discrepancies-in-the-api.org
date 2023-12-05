@@ -80,7 +80,7 @@ Look, I've been staring at the occupancy graph of [[https://bikes.cfeeley.org/vi
 So forgive me for thinking that *almost every disabled bike is a dead e-bike* - I'm sure a small number of them are mechanical bikes, but humour me.
 
 If we add the number of disabled bikes (*468*) to the number of available e-bikes, we get:
-*578*-ish e-bikes. Or, exactly 70% of the *825* e-bikes reported by the API.
+*578* e-bikes. Or, exactly 70% of the *825* e-bikes reported by the API.
 
 Hm.
 
