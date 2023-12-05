@@ -182,7 +182,7 @@
                     ;; Empty string to cause a closing </script> tag
                     "")
             (script (@ (defer "defer")
-                       (data-goatcounter "stats.cfeeley.org")
+                       (data-goatcounter "https://stats.cfeeley.org/count")
                        (src "https://stats.cfeeley.org/count.js"))
                     ;; Empty string to cause a closing </script> tag
                     "")
