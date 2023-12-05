@@ -84,6 +84,8 @@ If we add the number of disabled bikes (*468*) to the number of available e-bike
 
 Hm.
 
+[[img:NOTSUREIF.jpg][Image of Fry from the animated show Futurama with narrowed eyes and a skeptical look]]
+
 * <<footnotes>>
 
 [fn:1] [[https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-141507.pdf][RFP 20190821]] p.29
