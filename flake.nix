@@ -35,7 +35,7 @@
           {
             packages.default = pkgs.callPackage ./nix/cfeeley-website/default.nix { inherit emacsForPublish; publishUrl = null; };
 
-            devShells.default = pkgs.devshell.mkShell { imports = [ (pkgs.devshell.importTOML ./devshell.toml) ]; };
+            devshells.default = {  };
 
             # Treefmt configuration.
             treefmt.config = {

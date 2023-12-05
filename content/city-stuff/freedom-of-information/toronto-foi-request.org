@@ -72,6 +72,52 @@ Although this would make Bike Share Toronto a North American leader in e-bike ch
 #+begin_quote
 Consideration has been given to the option of purchasing e-bikes exclusively, but currently, it is urgent that the challenge of system rebalancing be addressed. Ensuring a well-balanced distribution of bikes throughout the network is essential to providing a seamless user experience. In addition, as the network expands into Neighbourhood Improvement Areas, TPA wants to ensure equitable access to annual members who may find the additional e-bike cost per minute a barrier. A balanced mix of iconic and ebikes is consistent with the approach being taken by other Bike Share programs, where typically, e-bikes make up 20 percent of fleets.
 #+end_quote
+* COMMENT First Quarter 2021 Update
+
+#+begin_quote
+The pedal-assist e-bikes we purchase are engineered and designed by PBSC. The bike models - ‘E-FITs’ - feature a central motor with a battery that is fully integrated in the aluminum frame of the bike. Users can travel up to 25 kilometres (km) per hour and can travel for 70 km until recharging is needed.
+
+E-bikes and charging stations are fully compatible with the rest of the system, allowing both conventional bikes and e-bikes to be docked in any solar-powered and e-bike charging station. Their complexities, however, offer some operational challenges that don’t exist in the regular system, that Bike Share staff are working to address. A list of these items can be found in Appendix A.
+
+Currently, e-bike maintenance is included in TPA’s Operator Agreement with SHIFT Transit Inc., whereas e-bike operations are not included. TPA is in discussions with SHIFT Transit Inc. surrounding e-bike operations to ensure that Bike Share can provide its customers with the same high-level experience expected of our regular iconic bike operations (i.e., convenient, and easy to find bikes). TPA anticipates that a report will be presented to the TPA Board of Directors in third quarter (Q3) – fourth quarter (Q4) 2022 with contract amendments specific to e-bike operations.
+#+end_quote
+
+#+begin_quote
+3. Challenge:
+Currently, Bike Share Toronto’s operator (SHIFT Transit Inc.) collects e-bikes with depleted batteries and returns to them to their warehouse for recharging before returning them into the system fully charged. This approach is time-consuming and the number of e-bikes that can be charged at one time is limited by the number of docks within the warehouse.
+
+Fix:
+Bike Share Toronto is exploring operational strategies that will increase the number of charged e-bikes in circulation. An alternative approach that is currently being explored is in-field battery swapping, which has been successfully applied in other markets like Montreal.
+
+Battery swapping involves charging a large supply of batteries and swapping them with depleted batteries in the field. Once implemented, Bike Share Toronto’s Operator would not need to bring e-bikes back to the warehouse for charging and they could increase the number of charged e-bikes in circulation.
+#+end_quote
+
+[[https://www.toronto.ca/legdocs/mmis/2022/pa/bgrd/backgroundfile-199512.pdf][BIKE SHARE TORONTO FIRST QUARTER (Q1) 2022 UPDATE]]
+
+* COMMENT Transit App Integration
+
+[[https://transitapp.com/banners/bike-share-toronto/shutdown][Toronto Parking Authority cuts off Transit app bike share integration]]
+
+[[https://www.tac-atc.ca/sites/default/files/conf_papers/modelling_the_impacts_of_rebalancing_strategies_on_bike_share_toronto.pdf][Modelling the Impacts of Rebalancing Strategies on Bike Share Toronto]]
+
+[[https://secure.toronto.ca/council/#/committees/1898/18328][Toronto City Council]]
+
+[[https://secure.toronto.ca/council/agenda-item.do?item=2022.PA32.3][Agenda Item History - 2022.PA32.3]]
+
+* COMMENT 2020 Bike Share Expansion Plan
+
+#+begin_quote
+The Bike Share Toronto system will be operated according to the agreement with Shift Transit Inc. In 2019 TPA conducted an open request for proposal (RFP) to select an exclusive operator for the system. Shift Transit Inc. was the successful proponent of the RFP and is responsible for operating all existing and future Bike Share Toronto equipment. The 2020 expansion equipment, including the pilot zones, will be operated to the same service level requirements as the existing equipment. All equipment will be monitored by the same Key Performance Indicators (KPIs), and the maintenance must meet the standards outlined in the supply agreement with PBSC.
+#+end_quote
+
+[[https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-145358.pdf][2020 Bike Share Expansion Plan]]
+
+* COMMENT Improving Toronto's Bike Share Program
+[[https://www.toronto.ca/legdocs/mmis/2021/pa/bgrd/backgroundfile-166730.pdf][Improving Toronto's Bike Share Program]]
+
+#+begin_quote
+In addition, TPA is working with its operator SHIFT in improving its' bike rebalancing operation, by reducing the number of empty/full stations. Recently, SHIFT adopted the use of an artificial intelligence machine learning software to provide operational teams with better system planning capabilities. TPA will continue to work with SHIFT to ensure that the rebalancing operation is carried out as effectively and efficiently as possible.
+#+end_quote
 
 * Appendix
 ** List of Charging Stations

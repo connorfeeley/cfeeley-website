@@ -1,5 +1,10 @@
 #+title: /freedom of information /part 2: the request
 #+date: 2023-11-27
+
+#+begin_quote
+Article is incomplete - check back later!
+#+end_quote
+
 This is the exact text of the FOI request I sent[fn:1]:
 #+begin_quote
 City Clerk’s Office

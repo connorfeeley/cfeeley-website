@@ -177,6 +177,10 @@
             ;; (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/prism.css"))))
+            (script (@ (src "/js/prism.js"))
+                    ;; Empty string to cause a closing </script> tag
+                    "")
             (script (@ (defer "defer")
                        (data-goatcounter "stats.cfeeley.org")
                        (src "https://stats.cfeeley.org/count.js"))
@@ -271,23 +275,65 @@
 	       (code (org-html-format-code src-block info)))
     (format "<pre>%s</pre>" (string-trim code))))
 
+(defun roygbyte/org-html-src-block (src-block _contents info)
+  "Transcode a SRC-BLOCK element from Org to HTML.
+  CONTENTS holds the contents of the item.  INFO is a plist holding
+  contextual information."
+  (if (org-export-read-attribute :attr_html src-block :textarea)
+      (org-html--textarea-block src-block)
+    (let* ((lang (org-element-property :language src-block))
+           (code (org-html-format-code src-block info))
+           (label (let ((lbl (org-html--reference src-block info t)))
+                    (if lbl (format " id=\"%s\"" lbl) "")))
+           (klipsify  (and  (plist-get info :html-klipsify-src)
+                            (member lang '("javascript" "js"
+                                           "ruby" "scheme" "clojure" "php" "html")))))
+      (if (not lang) (format "<pre class=\"example\"%s>\n%s</pre>" label code)
+        (format "<div class=\"org-src-container\">\n%s%s\n</div>"
+                ;; Build caption.
+                (let ((caption (org-export-get-caption src-block)))
+                  (if (not caption) ""
+                    (let ((listing-number
+                           (format
+                            "<span class=\"listing-number\">%s </span>"
+                            (format
+                             (org-html--translate "Listing %d:" info)
+                             (org-export-get-ordinal
+                              src-block info nil #'org-html--has-caption-p)))))
+                      (format "<label class=\"org-src-name\">%s%s</label>"
+                              listing-number
+                              (org-trim (org-export-data caption info))))))
+                ;; Contents.
+                ;; Changed HTML template to work with Prism.
+                (if klipsify
+                    (format "<pre><code class=\"src language-%s\"%s%s>%s</code></pre>"
+                            lang
+                            label
+                            (if (string= lang "html")
+                                " data-editor-type=\"html\""
+                              "")
+                            code)
+                  (format "<pre><code class=\"src language-%s\"%s>%s</code></pre>"
+                          lang label code)))))))
+
+
 (defun dw/org-html-special-block (special-block contents info)
   "Transcode a SPECIAL-BLOCK element from Org to HTML.
 CONTENTS holds the contents of the block.  INFO is a plist
 holding contextual information."
   (let* ((block-type (org-element-property :type special-block))
-         (attributes (org-export-read-attribute :attr_html special-block)))
+          (attributes (org-export-read-attribute :attr_html special-block)))
 	  (format "<div class=\"%s center\">\n%s\n</div>"
-            block-type
-            (or contents
-                (if (string= block-type "cta") ""
-                  "")))))
+      block-type
+      (or contents
+        (if (string= block-type "cta") ""
+          "")))))
 
 (org-export-define-derived-backend 'site-html 'html
   :translate-alist
   '((template . dw/org-html-template)
     (link . dw/org-html-link)
-    (src-block . dw/org-html-src-block)
+    (src-block . roygbyte/org-html-src-block)
     (special-block . dw/org-html-special-block)
     (headline . dw/org-html-headline))
   :options-alist
@@ -325,6 +371,18 @@ holding contextual information."
       org-html-self-link-headlines t
       org-export-with-toc nil
       make-backup-files nil)
+
+(defun cf/format-sitemap-entry (entry style project)
+  "Format posts with author and published data in the index page."
+  (cond ((not (directory-name-p entry))
+         (format "[[file:%s][%s]] - %s · %s"
+                 entry
+                 (org-publish-find-title entry project)
+                 (car (org-publish-find-property entry :author project))
+                 (format-time-string "%B %d, %Y"
+                                     (org-publish-find-date entry project))))
+        ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
+        (t entry)))
 
 (defun dw/format-news-entry (entry style project)
   "Format posts with author and published data in the index page."
@@ -379,6 +437,13 @@ holding contextual information."
               :base-extension "org"
               :publishing-directory "./public"
               :publishing-function org-html-publish-to-html
+              :auto-sitemap t
+              :sitemap-filename "./sitemap.org"
+              :sitemap-title "Main"
+              :sitemap-format-entry cf/format-sitemap-entry
+              ;; :sitemap-style list
+              ;; :sitemap-function dw/news-sitemap
+              :sitemap-sort-files anti-chronologically
               :with-title nil
               :with-timestamps nil)
             '("cfeeley:faq"
@@ -443,8 +508,7 @@ holding contextual information."
                    :description "Latest updates from cfeeley.org"
                    :author "Connor Feeley")
 
-  (dw/generate-redirects '(("support-the-channel" . "how-to-help")
-                           ("videos" . "guides")))
+  (dw/generate-redirects '())
 
   ;; Copy the domains file to ensure the custom domain resolves
   (copy-file ".domains" "public/.domains" t)

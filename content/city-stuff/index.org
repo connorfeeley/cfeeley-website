@@ -1,4 +1,5 @@
 #+title: /city stuff
-* [[/city-stuff/freedom-of-information/][Getting City of Toronto Records with Freedom of Information Requests]]
+* Bike Share Toronto & Freedom of Information Series
 ** [[/city-stuff/freedom-of-information/toronto-foi-request][1: The Good, the Bad, and the E-Bike]]
 ** [[/city-stuff/freedom-of-information/the-request][2: The Request]]
+** [[/city-stuff/freedom-of-information/discrepancies-in-the-api][3: Discrepancies]]

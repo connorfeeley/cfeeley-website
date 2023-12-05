@@ -1,3 +1,3 @@
 #+TITLE: News
 
-- [[file:freedom-of-information.org][Freedom of Information Series]] - November 27, 2023
+- [[file:freedom-of-information.org][Freedom of Information Series: Part 1]] - Connor Feeley · November 30, 2023
