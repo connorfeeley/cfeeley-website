@@ -465,3 +465,8 @@ blockquote {
   padding-left: 1rem;
   margin-left: 0;
 }
+
+img.image-export {
+  width: 100%;
+  height: auto;
+}

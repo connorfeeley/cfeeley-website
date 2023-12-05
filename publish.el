@@ -329,6 +329,17 @@ holding contextual information."
         (if (string= block-type "cta") ""
           "")))))
 
+(defun org-custom-link-img-follow (path)
+  (org-open-file-with-emacs
+   (format "../assets/img/%s" path)))
+
+(defun org-custom-link-img-export (path desc format)
+  (cond
+   ((eq format 'html)
+    (format "<img class=\"image-export\" src=\"/img/%s\" alt=\"%s\"/>" path desc))))
+
+(org-add-link-type "img" 'org-custom-link-img-follow 'org-custom-link-img-export)
+
 (org-export-define-derived-backend 'site-html 'html
   :translate-alist
   '((template . dw/org-html-template)
