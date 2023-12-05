@@ -446,11 +446,16 @@ strong {
 
 /* Style for footnotes */
 .footdef {
-  display: inline-flex;
   font-size: 0.9rem;
 }
 
-.footdef .footnum {
+.footdef > sup {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.footdef .footpara {
+  display: inline;
   margin-right: 0.5rem;
 }
 
