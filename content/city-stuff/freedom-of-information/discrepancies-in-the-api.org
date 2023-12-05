@@ -77,7 +77,7 @@ Hm. Well, 70% of 8126 (mechanical bikes) is *5688*. That's, uhh, /oddly/ close t
 
 Look, I've been staring at the occupancy graph of [[https://bikes.cfeeley.org/visualization/station-status?station-id=7001][Wellesley Station]] for the last three months, and I walk past it multiple times a day. It's always full of dead e-bikes, and I can see from the graph that they don't ever charge. Someone in a truck shows up once every day of two, dumps a bunch of dead e-bikes there (which stay there, since they never charge so they're reported as disabled bikes), and then a couple of days later someone in a truck shows up and takes them away (until the next night, when someone in a truck shows up...).
 
-So forgive me for thinking that *almost every disabled bike is a dead e-bike* - I'm sure a small number of them are mechanical bikes, but humour me.
+So forgive me for thinking that *almost every disabled bike is a dead e-bike*. I'm sure a small number of them are mechanical bikes, but humour me - the mechanical bikes are pretty bomb-proof.
 
 If we add the number of disabled bikes (*468*) to the number of available e-bikes, we get:
 *578* e-bikes. Or, exactly 70% of the *825* e-bikes reported by the API.
