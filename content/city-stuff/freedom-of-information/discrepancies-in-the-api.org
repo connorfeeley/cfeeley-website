@@ -59,7 +59,7 @@ The station count [[https://bikes.cfeeley.org/visualization/station-list][looks 
 *8126* mechanical bikes passes the sniff test too - or at least it seems within an order of magnitude of what I would expect (we'll come back to this).
 
 *825* e-bikes though? No. No way. Strangely, that's both way too high and way too low.
-- Way too low, since Bike Share Toronto [[/city-stuff/freedom-of-information/toronto-foi-request][advertises over 1800 e-bikes in the system]]
+- Way too low, since Bike Share Toronto [[/city-stuff/freedom-of-information/toronto-foi-request][advertises over 1800 e-bikes in the system]].
 - Way too high, since (as of mid-Sepember) I've been querying Bike Share Toronto's API for the number of bikes at each station, and I've *rarely* seen more than 250 e-bikes available across the entire system.
 
 I have however, seen a ton of disabled bikes at various stations (and frustratingly often at our limited number of charging stations)[fn:2].
