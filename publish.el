@@ -175,7 +175,7 @@
             ;; TODO: consider reenabling these fonts.
             ;; (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             ;; (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
-            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
+            ;; (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/prism.css"))))
             (script (@ (src "/js/prism.js"))
