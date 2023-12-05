@@ -73,7 +73,7 @@ And by that I mean:
 [[https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-141507.pdf][RFP 20190821]] (the contract between the Toronto Parking Authority and the private company which operates the system) specifies that the operator needs needs to ensure that an average of 90% of the total bike fleet needs to be available in the summer (May-September) and *70% in the winter (October-April)* are always available[fn:1].
 #+end_notes
 
-Hm. Well, 70% of 8126 (mechanical bikes) is *5688*. That's, uhh, /oddly/ close to their precise minimum contractual requirement.
+Hm. Well, 70% of 8126 (mechanical bikes) is *5688*. So *5698* is, uhh, /oddly/ close to their precise minimum contractual requirement.
 
 Look, I've been staring at the occupancy graph of [[https://bikes.cfeeley.org/visualization/station-status?station-id=7001][Wellesley Station]] for the last three months, and I walk past it multiple times a day. It's always full of dead e-bikes, and I can see from the graph that they don't ever charge. Someone in a truck shows up once every day of two, dumps a bunch of dead e-bikes there (which stay there, since they never charge so they're reported as disabled bikes), and then a couple of days later someone in a truck shows up and takes them away (until the next night, when someone in a truck shows up...).
 
