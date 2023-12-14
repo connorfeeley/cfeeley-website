@@ -45,7 +45,7 @@
          (posts (cfeeley/org-publish-sitemap--valid-entries posts)))
     (concat (format "#+TITLE: %s\n\n* %s\n" title subtitle)
             (org-list-to-org (cons (car sitemap) posts))
-            "\n#+BEGIN_EXPORT html\n<a href='rss.xml'><i class='fa fa-rss'></i></a>\n#+END_EXPORT\n")))
+            "\n#+BEGIN_EXPORT html\nRSS&nbsp<a href='rss.xml'><i class='fa fa-rss'></i></a>\n#+END_EXPORT\n")))
 
 (defun cfeeley/archive-sitemap-format-entry (entry style project)
   "archive.org and posts.org (latest) entry formatting. Format sitemap ENTRY for PROJECT with the post date before the link, to generate a posts list.  STYLE is not used."
