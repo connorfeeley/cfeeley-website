@@ -106,10 +106,53 @@
 
 (org-add-link-type "img" 'org-custom-link-img-follow 'org-custom-link-img-export)
 
+(defun roygbyte/org-html-src-block (src-block _contents info)
+  "Transcode a SRC-BLOCK element from Org to HTML.
+  CONTENTS holds the contents of the item.  INFO is a plist holding
+  contextual information."
+  (if (org-export-read-attribute :attr_html src-block :textarea)
+      (org-html--textarea-block src-block)
+    (let* ((lang (org-element-property :language src-block))
+           (code (org-html-format-code src-block info))
+           (label (let ((lbl (org-html--reference src-block info t)))
+                    (if lbl (format " id=\"%s\"" lbl) "")))
+           (klipsify  (and  (plist-get info :html-klipsify-src)
+                            (member lang '("javascript" "js"
+                                           "ruby" "scheme" "clojure" "php" "html")))))
+      (if (not lang) (format "<pre class=\"example\"%s>\n%s</pre>" label code)
+        (format "<div class=\"org-src-container\">\n%s%s\n</div>"
+                ;; Build caption.
+                (let ((caption (org-export-get-caption src-block)))
+                  (if (not caption) ""
+                    (let ((listing-number
+                           (format
+                            "<span class=\"listing-number\">%s </span>"
+                            (format
+                             (org-html--translate "Listing %d:" info)
+                             (org-export-get-ordinal
+                              src-block info nil #'org-html--has-caption-p)))))
+                      (format "<label class=\"org-src-name\">%s%s</label>"
+                              listing-number
+                              (org-trim (org-export-data caption info))))))
+                ;; Contents.
+                ;; Changed HTML template to work with Prism.
+                (if klipsify
+                    (format "<pre><code class=\"src language-%s\"%s%s>%s</code></pre>"
+                            lang
+                            label
+                            (if (string= lang "html")
+                                " data-editor-type=\"html\""
+                              "")
+                            code)
+                  (format "<pre><code class=\"src language-%s\"%s>%s</code></pre>"
+                          lang label code)))))))
+
 ; We derive our own backend in order to override the timestamp format of the html backend
 (org-export-define-derived-backend 'cfeeley/html 'html
   :translate-alist
-  '((timestamp . cfeeley/org-html-timestamp)))
+  '((timestamp . cfeeley/org-html-timestamp)
+    (src-block . roygbyte/org-html-src-block)
+    ))
 
 (defun cfeeley/post-get-metadata-from-frontmatter (post-filename key)
   "Extract the KEY as`#+KEY:` from POST-FILENAME."
