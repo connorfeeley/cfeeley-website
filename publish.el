@@ -150,6 +150,7 @@
      (list "link" (list "href" "/css/site.css" "rel" "stylesheet"))
      (list "link" (list "href" "/css/prism.css" "rel" "stylesheet"))
      (list "script" (list "src" "/js/prism.js"))
+     (list "script" (list "src" "https://stats.cfeeley.org/count.js" "data-goatcounter" "https://stats.cfeeley.org/count" "defer" "defer"))
      (list "link" (list "rel" "alternate" "type" "application+rss/xml" "title" description "href" "posts/rss.xml")))))
 
 (defun cfeeley/hash-for-filename (filename)
