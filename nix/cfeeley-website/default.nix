@@ -19,6 +19,6 @@ stdenv.mkDerivation {
     mkdir -p $out
     emacs -Q --batch -l $src/publish.el --funcall duncan-publish-all
     ls -al
-    cp -r public/ $out
+    cp -a public/* $out
   '';
 }
