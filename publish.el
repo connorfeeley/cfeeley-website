@@ -147,6 +147,9 @@
     (list
      (list "link" (list "href" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" "rel" "stylesheet" "integrity" "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" "crossorigin" "anonymous"))
      (list "meta" (list "description" description))
+     (list "link" (list "href" "/css/site.css" "rel" "stylesheet"))
+     (list "link" (list "href" "/css/prism.css" "rel" "stylesheet"))
+     (list "script" (list "src" "/js/prism.js"))
      (list "link" (list "rel" "alternate" "type" "application+rss/xml" "title" description "href" "posts/rss.xml")))))
 
 (defun cfeeley/hash-for-filename (filename)
@@ -168,7 +171,7 @@
   "Analog to org-html-publish-to-html using cfeeley/html backend.  PLIST, FILENAME and PUB-DIR are passed as is."
   (plist-put plist :html-head
              (concat
-               (cfeeley--insert-snippet "analytics.js")
+               ;; (cfeeley--insert-snippet "analytics.js")
                (cfeeley/org-html-head
                 (append (cfeeley/head-common-list plist)
                         (plist-get plist :html-head-list)) plist)))
@@ -185,13 +188,13 @@
   (mapconcat (lambda (x)
                (let ((tag (nth 0 x))
                      (attrs (nth 1 x)))
-                 (format "<%s %s/>" tag
+                 (format "<%s %s></%s>" tag
                          (mapconcat
                           (lambda (x)
                             (let ((attr (nth 0 x))
                                   (value (nth 1 x)))
                               (when x
-                                (format "%s='%s'" attr value)))) (seq-partition attrs 2) " ")))) tags "\n"))
+                                (format "%s=\"%s\"" attr value)))) (seq-partition attrs 2) " ") tag))) tags "\n"))
 
 (defun cfeeley/org-html-publish-post-to-html (plist filename pub-dir)
   "Wraps org-html-publish-to-html.  Append post date as subtitle to PLIST.  FILENAME and PUB-DIR are passed."
