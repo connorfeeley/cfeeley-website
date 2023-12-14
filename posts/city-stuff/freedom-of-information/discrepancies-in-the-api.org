@@ -84,7 +84,7 @@ If we add the number of disabled bikes (*468*) to the number of available e-bike
 
 Hm.
 
-[[file:images/NOTSUREIF.jpg]]
+[[img:images/NOTSUREIF.jpg][Image of Fry from the animated show Futurama with narrowed eyes and a skeptical look]]
 
 * <<footnotes>>
 

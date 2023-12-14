@@ -99,7 +99,14 @@
         (org-display-custom-times 't))
     (org-html-timestamp timestamp contents info)))
 
-                                        ; We derive our own backend in order to override the timestamp format of the html backend
+(defun org-custom-link-img-export (path desc format)
+  (cond
+   ((eq format 'html)
+    (format "<figure><img class=\"image-export\" src=\"%s\" alt=\"%s\"/></figure>" path desc))))
+
+(org-add-link-type "img" 'org-custom-link-img-follow 'org-custom-link-img-export)
+
+; We derive our own backend in order to override the timestamp format of the html backend
 (org-export-define-derived-backend 'cfeeley/html 'html
   :translate-alist
   '((timestamp . cfeeley/org-html-timestamp)))
@@ -313,7 +320,7 @@
          :publishing-directory "./public"
          :publishing-function 'org-publish-attachment)))
 
-                                        ; Our publishing definition
+; Our publishing definition
 (defun cfeeley-publish-all ()
   "Publish the blog to HTML."
   (interactive)
