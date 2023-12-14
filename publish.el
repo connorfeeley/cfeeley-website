@@ -319,7 +319,7 @@
          :publishing-directory "./public"
          :publishing-function 'ignore
          ;;:publishing-function 'cfeeley/org-rss-publish-to-rss
-         :html-link-home "http://mac-vicar.eu/"
+         :html-link-home "https://www.cfeeley.org/"
          :html-link-use-abs-url t
          :auto-sitemap t
          :sitemap-style 'list
@@ -350,7 +350,7 @@
          :base-extension "org"
          :publishing-directory "./public"
          :publishing-function 'cfeeley/org-rss-publish-to-rss
-         :html-link-home "http://mac-vicar.eu/"
+         :html-link-home "https://www.cfeeley.org/"
          :html-link-use-abs-url t)
    (list "site"
          :base-directory "./"
