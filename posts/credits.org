@@ -8,4 +8,5 @@ Here is the attribution for these works:
 
 * Site Generation
 
-- =publish.el= from SystemCrafters
+- Parts of =publish.el= and styling from [[https://codeberg.org/SystemCrafters/systemcrafters-site][SystemCrafters]].
+- Parts of =publish.el= from [[https://github.com/dmacvicar/site.org][Duncan Mac-Vicar P]].
