@@ -22,7 +22,7 @@ Full list on my [[file:./posts/archive.org][my blog.]]
 - <2023-11-27> [[file:posts/city-stuff/freedom-of-information/the-request.org][2: The Request]]
 - <2023-12-05> [[file:posts/city-stuff/freedom-of-information/discrepancies-in-the-api.org][3: The Discrepancies]]
 
-* \faCode Projects/Code
+* \faCode Tech
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list
   :END:
