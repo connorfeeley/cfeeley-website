@@ -2,6 +2,7 @@
 #+author: Connor Feeley
 #+date: <2023-12-04>
 
+I got a response back to [[file:the-request.org][my first FOI request]].
 #+begin_quote
 November 29, 2023
 
@@ -31,5 +32,9 @@ Tel: <phone number>
 
 The City of Toronto does not have any records responsive to your request. Should you have any questions, please do not hesitate to contact <name> at <phone> or <email>@toronto.ca.
 #+end_quote
+
+Apparently the /Toronto/ parking authority is not part of the /City of Toronto/. Okay.
+
+I read section 18 of the [[https://www.canlii.org/en/on/laws/stat/rso-1990-c-m56/latest/rso-1990-c-m56.html#sec18subsec1][MFIPPA]] and my layperson's understanding is that they've forwarded my request and that I don't have to do anything at this time. To make sure, I followed up with an email asking if that understanding is right; apparently it is.
 
 /Note: the information I redacted for the Toronto Parking Authority contact is for a different person than the redacted information in the final paragraph./

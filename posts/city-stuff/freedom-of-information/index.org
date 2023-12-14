@@ -4,5 +4,6 @@
 
 * [[file:toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
 * [[file:the-request.org][2: The Request]]
-* [[file:discrepancies-in-the-api.org][3: Discrepancies]]
-* [[file:the-second-request.org][4: Much ado about a contract (the second request)]]
+* [[file:the-response.org][3: The Response]]
+* [[file:discrepancies-in-the-api.org][4: Discrepancies]]
+* [[file:the-second-request.org][5: Much ado about a contract (the second request)]]
