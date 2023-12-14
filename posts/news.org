@@ -1,5 +1,0 @@
-#+TITLE: News
-#+author: Connor Feeley
-#+date: <2023-11-29>
-
-- [[file:freedom-of-information.org][Freedom of Information Series: Part 1]] - Connor Feeley · November 30, 2023
