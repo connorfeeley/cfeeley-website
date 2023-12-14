@@ -1,6 +1,6 @@
 #+title: The Good, the Bad, and the E-Bike
 #+author: Connor Feeley
-#+date: 2023-11-27
+#+date: <2023-11-27>
 
 #+begin_quote
 Article is incomplete - check back later!

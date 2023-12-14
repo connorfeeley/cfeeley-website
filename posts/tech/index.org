@@ -1,4 +1,7 @@
 #+title: /tech
+#+author: Connor Feeley
+#+date: <2023-11-29>
+
 * Active Projects
 /Recent or active projects I've been working on./
 ** [[https://github.com/connorfeeley/haskbike][haskbike]]: A Haskell library and API client for Toronto Bike Share :haskell:

@@ -1,4 +1,6 @@
 #+title: Privacy Policy
+#+author: Connor Feeley
+#+date: <2023-11-29>
 This website uses (self-hosted) [[https://www.goatcounter.com/][GoatCounter]] for analytics.
 
 I'm only interested in some fairly simple analytics like specific page views and client resolutions. I don't feel right opting my users into the advertising surviellance ecosystem by using the dominant analytics platforms. While GoatCounter is available as a hosted service, I still prefer to keep custody of that data.

@@ -1,6 +1,6 @@
 #+title: Freedom of Information Series: Part 1
 #+author: Connor Feeley
-#+date: 2023-11-29
+#+date: <2023-11-29>
 #+kind: news
 
 I started a series of articles ostensibly about Toronto's public bike share program.

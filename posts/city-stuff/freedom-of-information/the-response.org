@@ -1,6 +1,6 @@
 #+title: The Response
 #+author: Connor Feeley
-#+date: 2023-12-04
+#+date: <2023-12-04>
 
 #+begin_quote
 November 29, 2023

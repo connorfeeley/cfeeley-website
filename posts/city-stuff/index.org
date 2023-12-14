@@ -1,5 +1,6 @@
 #+title: /city stuff
+#+date: <2023-11-27>
 * Bike Share Toronto & Freedom of Information Series
-** [[/city-stuff/freedom-of-information/toronto-foi-request][1: The Good, the Bad, and the E-Bike]]
-** [[/city-stuff/freedom-of-information/the-request][2: The Request]]
-** [[/city-stuff/freedom-of-information/discrepancies-in-the-api][3: Discrepancies]]
+** [[file:freedom-of-information/toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
+** [[file:freedom-of-information/the-request.org][2: The Request]]
+** [[file:freedom-of-information/discrepancies-in-the-api.org][3: Discrepancies]]
