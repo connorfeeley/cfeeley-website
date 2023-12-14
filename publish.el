@@ -190,11 +190,25 @@
     (list
      (list "link" (list "href" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" "rel" "stylesheet" "integrity" "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" "crossorigin" "anonymous"))
      (list "meta" (list "description" description))
+
+     ;; Style and JS.
      (list "link" (list "href" "/css/site.css" "rel" "stylesheet"))
      (list "link" (list "href" "/css/prism.css" "rel" "stylesheet"))
      (list "script" (list "src" "/js/prism.js"))
+
+     ;; Analytics
      (list "script" (list "src" "https://stats.cfeeley.org/count.js" "data-goatcounter" "https://stats.cfeeley.org/count" "defer" "defer"))
-     (list "link" (list "rel" "alternate" "type" "application+rss/xml" "title" description "href" "posts/rss.xml")))))
+
+     (list "link" (list "rel" "alternate" "type" "application+rss/xml" "title" description "href" "posts/rss.xml"))
+
+     ;; Favicons
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "16x16" "target" "_blank" "href" "/img/favicon-16x16.png"))
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "32x32" "target" "_blank" "href" "/img/favicon-32x32.png"))
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "48x48" "target" "_blank" "href" "/img/favicon-48x48.png"))
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "96x96" "target" "_blank" "href" "/img/favicon-96x96.png"))
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "180x180" "target" "_blank" "href" "/img/favicon-180x180.png"))
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "300x300" "target" "_blank" "href" "/img/favicon-300x300.png"))
+     (list "link" (list "rel" "icon noopener noreferrer" "type" "image/png" "sizes" "512x512" "target" "_blank" "href" "/img/favicon-512x512.png")))))
 
 (defun cfeeley/hash-for-filename (filename)
   "Returns the sha25 for FILENAME."
