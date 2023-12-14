@@ -17,7 +17,7 @@ stdenv.mkDerivation {
 
   buildPhase = ''
     mkdir -p $out
-    emacs -Q --batch -l $src/publish.el --funcall duncan-publish-all
+    emacs -Q --batch -l $src/publish.el --funcall cfeeley-publish-all
     ls -al
     cp -a public/* $out
   '';
