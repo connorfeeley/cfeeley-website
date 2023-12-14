@@ -19,6 +19,7 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous'/>
 <meta description='The blog of Duncan Mac-Vicar P.'/>
 <link rel='alternate' type='application+rss/xml' title='The blog of Duncan Mac-Vicar P.' href='posts/rss.xml'/>
+<link rel='stylesheet' href='css/index.css?v=947370da49ce6a70746b3cb8a4de44c929ca0b1e3d6ca60c89603f567a841a26'/>
 <link rel="stylesheet" href="css/site.css?v=d06246555179cc693994c6cd6cd74faed6bc08c754a9ae99c23e96ba131806e7" type="text/css">
 </head>
 <body>
@@ -49,33 +50,33 @@
 <header>
 <h1 class="title">My homepage with org-mode</h1>
 </header>
-<figure id="orgfa0d56e">
+<figure id="org5b22274">
 <a href="https://github.com/dmacvicar/site.org/actions?query=workflow%3A%22Build+and+publish+to+pages%22"><object type="image/svg+xml" data="https://github.com/dmacvicar/site.org/workflows/Build%20and%20publish%20to%20pages/badge.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object></a>
 
 </figure>
 
-<section id="outline-container-org0cc9d63" class="outline-2">
-<h2 id="org0cc9d63">Introduction</h2>
-<div class="outline-text-2" id="text-org0cc9d63">
+<section id="outline-container-org0b4665a" class="outline-2">
+<h2 id="org0b4665a">Introduction</h2>
+<div class="outline-text-2" id="text-org0b4665a">
 <p>
 This setup based on <a href="https://orgmode.org">org-mode</a> aims to replace my previous <a href="https://jekyllrb.com">Jekyll</a> setup used to publish my site.
 </p>
 </div>
 </section>
 
-<section id="outline-container-org8b8008b" class="outline-2">
-<h2 id="org8b8008b">Implementation</h2>
-<div class="outline-text-2" id="text-org8b8008b">
+<section id="outline-container-orgcd9fa18" class="outline-2">
+<h2 id="orgcd9fa18">Implementation</h2>
+<div class="outline-text-2" id="text-orgcd9fa18">
 <p>
 For details about the implementation see <a href="posts/2019-09-03-migrating-from-jekyll-to-org/index.html">the introductory post</a> and the <a href="https://github.com/dmacvicar/site.org"><i aria-hidden='true' class='fa fa-github'></i> Source</a>.
 </p>
 </div>
 </section>
 
-<section id="outline-container-org73412fa" class="outline-2">
-<h2 id="org73412fa">Usage</h2>
-<div class="outline-text-2" id="text-org73412fa">
+<section id="outline-container-org1576334" class="outline-2">
+<h2 id="org1576334">Usage</h2>
+<div class="outline-text-2" id="text-org1576334">
 <ul class="org-ul">
 <li>Posts go into <code>posts/</code>
 Preferably in their own subdirectory together with all their assets (self-contained)</li>
@@ -86,7 +87,7 @@ Preferably in their own subdirectory together with all their assets (self-contai
 To generate:
 </p>
 
-<pre class="example" id="org98f80a7">
+<pre class="example" id="orgcb0d681">
 $ make
 </pre>
 
@@ -95,9 +96,9 @@ The output site will be rendered in <code>public/</code>.
 </p>
 </div>
 
-<div id="outline-container-org8bcad16" class="outline-3">
-<h3 id="org8bcad16">RSS Feeds</h3>
-<div class="outline-text-3" id="text-org8bcad16">
+<div id="outline-container-org54cf4c8" class="outline-3">
+<h3 id="org54cf4c8">RSS Feeds</h3>
+<div class="outline-text-3" id="text-org54cf4c8">
 <p>
 I am documenting this part because it is complicated and I tend to forget how it works everytime something breaks.
 </p>
@@ -154,13 +155,13 @@ The <span class="underline">RSS</span> exporter will then use the property for t
 </div>
 </section>
 
-<section id="outline-container-org6c44ddc" class="outline-2">
-<h2 id="org6c44ddc">Features</h2>
-<div class="outline-text-2" id="text-org6c44ddc">
+<section id="outline-container-org15030ae" class="outline-2">
+<h2 id="org15030ae">Features</h2>
+<div class="outline-text-2" id="text-org15030ae">
 </div>
-<div id="outline-container-orgaeadc2d" class="outline-4">
-<h4 id="orgaeadc2d">Redirection</h4>
-<div class="outline-text-4" id="text-orgaeadc2d">
+<div id="outline-container-orgb429c5f" class="outline-4">
+<h4 id="orgb429c5f">Redirection</h4>
+<div class="outline-text-4" id="text-orgb429c5f">
 <p>
 When the site was generated using Jekyll, posts where generated in the <code>/:year/:month/:day/:id.html</code> route.
 In order to generate a redirect page, use the following keyword to generate a redirect page:
@@ -173,9 +174,9 @@ In order to generate a redirect page, use the following keyword to generate a re
 </div>
 </div>
 
-<div id="outline-container-org056f81f" class="outline-3">
-<h3 id="org056f81f">Drafts</h3>
-<div class="outline-text-3" id="text-org056f81f">
+<div id="outline-container-org5353cf7" class="outline-3">
+<h3 id="org5353cf7">Drafts</h3>
+<div class="outline-text-3" id="text-org5353cf7">
 <p>
 To hide a post from the list of recent posts or the full archive, use:
 </p>
@@ -192,9 +193,9 @@ Note that the post will still be published, but you will need to access it by it
 </div>
 </section>
 
-<section id="outline-container-org82b58fa" class="outline-2">
-<h2 id="org82b58fa">License</h2>
-<div class="outline-text-2" id="text-org82b58fa">
+<section id="outline-container-org531235d" class="outline-2">
+<h2 id="org531235d">License</h2>
+<div class="outline-text-2" id="text-org531235d">
 <p>
 The code used for generating the site is licensed under the <a href="LICENSE">MIT</a> license.
 </p>
