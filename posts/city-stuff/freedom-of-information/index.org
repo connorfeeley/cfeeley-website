@@ -1,7 +1,7 @@
 #+title: Getting City of Toronto Records with Freedom of Information Requests
 #+author: Connor Feeley
-#+date: 2023-12-01
+#+date: <2023-12-01>
 
-* [[/city-stuff/freedom-of-information/toronto-foi-request][1: The Good, the Bad, and the E-Bike]]
-* [[/city-stuff/freedom-of-information/the-request][2: The Request]]
-* [[/city-stuff/freedom-of-information/discrepancies-in-the-api][3: Discrepancies]]
+* [[file:toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
+* [[file:the-request.org][2: The Request]]
+* [[file:discrepancies-in-the-api.org][3: Discrepancies]]

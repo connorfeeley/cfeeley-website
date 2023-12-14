@@ -2,8 +2,9 @@
 (package-initialize)
 (setq package-archives '(("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("melpa" . "https://melpa.org/packages/")))
+(setq package-user-dir (expand-file-name "./.packages"))
 (package-refresh-contents)
-(dolist (pkg '(dash projectile yaml-mode htmlize))
+(dolist (pkg '(dash projectile yaml-mode htmlize ox-rss))
   (unless (package-installed-p pkg)
     (package-install pkg)))
 
@@ -327,6 +328,7 @@
         (org-src-fontify-natively t)
         (org-publish-cache nil)
         (org-publish-use-timestamps-flag nil)
+        (org-publish-timestamp-directory "./.org-cache/")
         (org-export-with-section-numbers nil)
         (org-export-with-smart-quotes    t)
         (org-export-with-toc             nil)
