@@ -1,0 +1,15 @@
+#+title: The Second Request
+#+author: Connor Feeley
+#+date: 2023-12-05
+
+#+begin_quote
+Article is incomplete - check back later!
+#+end_quote
+
+#+begin_quote
+This is a request under this jurisdiction’s freedom of information legislation for records held by the Toronto Parking Authority.
+
+I’m seeking all final contracts and amendments signed by this institutions that concern Shift Transit. Please include any attachments to the aforementioned documents. Records should date from January 1, 2019 to December 6, 2023.
+
+I would like this information sent electronically.
+#+end_quote

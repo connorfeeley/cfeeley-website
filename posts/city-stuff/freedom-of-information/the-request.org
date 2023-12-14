@@ -1,0 +1,51 @@
+#+title: /freedom of information /part 2: the request
+#+date: 2023-11-27
+
+#+begin_quote
+Article is incomplete - check back later!
+#+end_quote
+
+This is the exact text of the FOI request I sent[fn:1]:
+#+begin_quote
+City Clerk’s Office
+
+Corporate Information Management Services
+
+City Hall, 13th Floor (West Tower)
+
+100 Queen Str. W.
+
+Toronto, ON, M5H 2N2
+
+To whom it may concern,
+
+This is a request under this jurisdiction’s freedom of information legislation for records held by the Toronto Parking Authority regarding Bike Share Toronto.
+
+I’m seeking copies of all monthly, weekly, and ad-hoc reports listed in sections 3.9.2, 3.9.3, and 3.9.4 of RFP 20190821 (https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-141507.pdf):
+- Section 3.9.2 ("Monthly Reports"): report numbers 1-29
+- Section 3.9.3 ("Weekly Reports"): report numbers 1-2
+- Section 3.9.4 ("Ad hoc Reports"): report numbers 1-6
+
+These records are requested for the period of February 1, 2020 to December 1, 2023.
+
+Please provide these records in their native digital format and not in formats that degrade the accessibility of the records, such as tabular data converted to PDF or Word files. If converting the digital format to another high-fidelity format, such as CSV or Excel, please take care not to introduce formatting inconsistencies or errors, which can occur in the conversion process (for example, encoding errors or the inclusion of internal unescaped quotation marks in CSV files).
+
+Only include latest versions of documents (final versions or latest drafts), and exclude translations, with a preference for English, unless the documents are available in only one language.
+
+I am open to re-scoping this request once you hear back from the office of primary interest, particularly if this request would result in a large number of records.
+
+I request that the responsive records be provided by e-mail or digital file transfer, rather than by postal mail.
+
+
+Sincerely,
+
+Connor Feeley
+
+<address>
+
+Toronto, Ontario, <postal code>
+
+<phone number> | <email>
+#+end_quote
+
+[fn:1] Well, I obviously redacted my personal information.

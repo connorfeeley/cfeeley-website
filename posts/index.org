@@ -1,0 +1,5 @@
+#+title: Welcome!
+
+Check out the [[/news][News page]] to see the latest updates.  You can also subscribe to [[/rss][RSS Feeds]] for various parts of the site.
+
+Check out [[/tech][/tech]] for computer stuff and [[/city-stuff][/city stuff]] for articles about Toronto and urban governance and whatnot (and computer stuff).

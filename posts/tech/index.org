@@ -1,0 +1,15 @@
+#+title: /tech
+* Active Projects
+/Recent or active projects I've been working on./
+** [[https://github.com/connorfeeley/haskbike][haskbike]]: A Haskell library and API client for Toronto Bike Share :haskell:
+This project was borne out of my frustration for why the Wellesley Station bike share station has had at least 9 broken e-bikes.
+
+/Update: Hah! Those were the days. Lately it's been about 22. Out of 23 docks./
+
+I've been polling the API roughly every 30 seconds since around the end of September for the latest occupancy data for each station and dumping it into a database on AWS. At this point I have enough data to definitively prove that Wellesley Station bike share station is indeed /completely/ busted.
+
+I'm currently waiting to receive a response to my [[/city-stuff/freedom-of-information][Freedom of Information]] request.
+
+** [[https://github.com/connorfeeley/virtual-dts-mode][virtual-dts-mode]]: Emacs major mode for automatically decompiling and compiling device tree binary files.
+
+** [[http://github.com/connorfeeley/goatcounter-flake][goatcounter-flake]]: Nix packages and flake-parts modules for the privacy-focused [[https://www.goatcounter.com/][GoatCounter]] analytics platform :nix:

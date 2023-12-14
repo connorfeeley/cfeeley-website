@@ -1,0 +1,104 @@
+#+title: Discrepancies in the API
+#+author: Connor Feeley
+#+date: 2023-12-05
+
+#+begin_quote
+Article is incomplete - check back later!
+#+end_quote
+
+As it turns out, Toronto's Bike Share system uses a standardized API[fn:3] format: [[https://gbfs.org/][General Bikeshare Feed Specification]], or GBFS.
+
+#+begin_notes
+/Hello, TTC? It's 2023. Please get with the times and ditch the crappy, proprietary XML API./
+
+/Be like Bike Share Toronto./
+#+end_notes
+
+This is great, because apart from being clearly documented and fairly easy to work with (/still looking at you, TTC/), we can find some interesting tidbits of information where the API _deviates_ from the standard.
+Of particular interest is the /system information/ endpoint.
+
+Let's check it out:
+
+#+begin_src shell
+curl "https://tor.publicbikesystem.net/customer/gbfs/v2/en/system_information" | jq .
+#+end_src
+
+#+begin_src json
+{
+  "last_updated": 1701754523,
+  "ttl": 3,
+  "data": {
+    "system_id": "bike_share_toronto",
+    "language": "en",
+    "name": "bike_share_toronto",
+    "timezone": "America/Toronto",
+    "build_version": "2023.1",
+    "build_label": "2023-11-17",
+    "build_hash": "2a5b9d6",
+    "build_number": "267",
+    "mobile_head_version": "2",
+    "mobile_minimum_supported_version": "1",
+    "_vehicle_count": {
+      "_mechanical_count": 8126,
+      "_ebike_count": 825
+    },
+    "_station_count": 764
+  },
+  "version": "2.3"
+}
+#+end_src
+
+Cool! Some fairly mundane version information, the number of stations, and - ooh, the number of each bike type!
+
+The station count [[https://bikes.cfeeley.org/visualization/station-list][looks right]] based on the data I've gathered.
+
+#+begin_notes
+/There are some gaps between station IDs, but there are 773 rows in my station database and some of those are defunct. 764 stations sounds about right./
+#+end_notes
+
+*8126* mechanical bikes passes the sniff test too - or at least it seems within an order of magnitude of what I would expect (we'll come back to this).
+
+*825* e-bikes though? No. No way. Strangely, that's both way too high and way too low.
+- Way too low, since Bike Share Toronto [[/city-stuff/freedom-of-information/toronto-foi-request][advertises over 1800 e-bikes in the system]].
+- Way too high, since (as of mid-Sepember) I've been querying Bike Share Toronto's API for the number of bikes at each station, and I've *rarely* seen more than 250 e-bikes available across the entire system.
+
+I have however, seen a ton of disabled bikes at various stations (and frustratingly often at our limited number of charging stations)[fn:2].
+
+It's unclear to me what the API is reporting, since if I sum up all the mechanical bikes at every station I get *5698* (at the time of writing). Likewise, if I sum all the e-bikes, I get... *109*[fn:4].
+
+But, in the immortal words of Anchorman, "+60%+ 70% of the time, it works every time".
+
+And by that I mean:
+#+begin_notes
+[[https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-141507.pdf][RFP 20190821]] (the contract between the Toronto Parking Authority and the private company which operates the system) specifies that the operator needs needs to ensure that an average of 90% of the total bike fleet needs to be available in the summer (May-September) and *70% in the winter (October-April)* are always available[fn:1].
+#+end_notes
+
+Hm. Well, 70% of 8126 (mechanical bikes) is *5688*. So *5698* is, uhh, /oddly/ close to their precise minimum contractual requirement.
+
+Look, I've been staring at the occupancy graph of [[https://bikes.cfeeley.org/visualization/station-status?station-id=7001][Wellesley Station]] for the last three months, and I walk past it multiple times a day. It's always full of dead e-bikes, and I can see from the graph that they don't ever charge. Someone in a truck shows up once every day of two, dumps a bunch of dead e-bikes there (which stay there, since they never charge so they're reported as disabled bikes), and then a couple of days later someone in a truck shows up and takes them away (until the next night, when someone in a truck shows up...).
+
+So forgive me for thinking that *almost every disabled bike is a dead e-bike*. I'm sure a small number of them are mechanical bikes, but humour me - the mechanical bikes are pretty bomb-proof.
+
+If we add the number of disabled bikes (*468*) to the number of available e-bikes, we get:
+*578* e-bikes. Or, exactly 70% of the *825* e-bikes reported by the API.
+
+Hm.
+
+[[file:images/NOTSUREIF.jpg][Image of Fry from the animated show Futurama with narrowed eyes and a skeptical look]]
+
+* <<footnotes>>
+
+[fn:1] [[https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-141507.pdf][RFP 20190821]] p.29
+
+[fn:2] When e-bikes fall below a minimum charge level they lock themselves out and become disabled until recharged.
+
+[fn:3] An API is a way for computers to talk to other computers.
+
+[fn:4] If you don't trust [[https://bikes.cfeeley.org/visualization/system-status?start-time=2023-12-04T12%3A00&end-time=2023-12-05T12%3A00][my data]] but you happen to be handy with a computer, you can use this shell command to calculate the number of each bike type in the system at the current time:
+
+#+begin_src shell
+curl "https://tor.publicbikesystem.net/customer/gbfs/v2/en/station_status" | \
+    jq --raw-output '.data.stations[] | [.vehicle_types_available[].count] | @tsv' | \
+    awk '{j[1]="Boost"; j[2]="Iconic"; j[3]="E-Fit"; j[4]="E-Fit G5"; for (i=1; i<=NF; i++) sum[i]+=$i} END {for (i in sum) {print j[i] ": " sum[i]}}'
+#+end_src
+/Ignore "Boost" - for some reason the Bike Share Toronto API bothers to report that they have 0 of a bike type that they've newer owned./

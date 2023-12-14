@@ -1,0 +1,35 @@
+#+title: The Response
+#+author: Connor Feeley
+#+date: 2023-12-04
+
+#+begin_quote
+November 29, 2023
+
+Mr. Connor Feeley
+<address>
+Toronto ON <postal code>
+
+Dear Mr. Feeley:
+
+Subject:	City of Toronto Access Request Number *FOI-2023-02816*
+I am replying to your request, under the Municipal Freedom of Information and Protection of Privacy Act, for a copy of all monthly, weekly, and ad-hoc reports listed in sections 3.9.2, 3.9.3, and 3.9.4 of RFP 20190821 (https://www.toronto.ca/legdocs/mmis/2020/pa/bgrd/backgroundfile-141507.pdf):
+Section 3.9.2 ("Monthly Reports"): report numbers 1-29;
+Section 3.9.3 ("Weekly Reports"): report numbers 1-2; and
+Section 3.9.4 ("Ad hoc Reports"): report numbers 1-6.
+
+Records search from February 1, 2020 to December 1, 2023. Your request was received in our office on November 27, 2023.
+
+It has been determined that the requested records are under the custody or control of the Toronto Parking Authority which is designated as a separate institution under the Act.
+Therefore, your request is being transferred out, in full, to them for response under section 18 of MFIPPA. The address is as follows:
+
+Toronto Parking Authority
+<name>
+33 Queen Street East
+Toronto, ON M5C 1R5
+Tel: <phone number>
+<email>@toronto.ca
+
+The City of Toronto does not have any records responsive to your request. Should you have any questions, please do not hesitate to contact <name> at <phone> or <email>@toronto.ca.
+#+end_quote
+
+/Note: the information I redacted for the Toronto Parking Authority contact is for a different person than the redacted information in the final paragraph./
