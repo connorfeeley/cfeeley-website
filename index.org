@@ -8,16 +8,19 @@
 
 #+INCLUDE: posts/posts.org
 
-Full list at my [[file:./posts/archive.org][my blog.]]
+Full list on my [[file:./posts/archive.org][my blog.]]
 
 -----
 
-* \faBike Bike Share Toronto
+* \faToronto City Stuff
+  :PROPERTIES:
+  :HTML_CONTAINER_CLASS: post-list
+  :END:
 
-** Bike Share Toronto
-- [[file:posts/city-stuff/freedom-of-information/toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
-- [[file:posts/city-stuff/freedom-of-information/the-request.org][2: The Request]]
-- [[file:posts/city-stuff/freedom-of-information/discrepancies-in-the-api.org][3: Discrepancies]]
+** \faBike Bike Share Toronto
+- <2023-11-27> [[file:posts/city-stuff/freedom-of-information/toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
+- <2023-11-27> [[file:posts/city-stuff/freedom-of-information/the-request.org][2: The Request]]
+- <2023-12-05> [[file:posts/city-stuff/freedom-of-information/discrepancies-in-the-api.org][3: The Discrepancies]]
 
 * \faCode Projects/Code
   :PROPERTIES:
@@ -27,9 +30,3 @@ Full list at my [[file:./posts/archive.org][my blog.]]
 - <2023-12-13> [[file:posts/tech/index.org][haskbike]]: a Haskell library/API client/visualization server for Toronto's bike share program
 - <2023-11-01> [[file:posts/tech/index.org][virtual-dts-mode]]: an Emacs mode for interacting with device tree binary files as if they were (uncompiled) device tree source files
 - <2023-11-01> [[file:posts/tech/index.org][goatcounter-flake]]: Nix packages and flake-parts modules for the privacy-focused [[https://www.goatcounter.com/][GoatCounter]] analytics platform
-# * \faGraduationCap Tutorials
-#   :PROPERTIES:
-#   :HTML_CONTAINER_CLASS: post-list
-#   :END:
-
-# - <2017-03-08 Wed> [[file:tutorials/rpm-packaging/index.org][Full overview of RPM based packaging.]]

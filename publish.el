@@ -349,6 +349,7 @@
            ("faBookmark" "\\faBookmark" nil "<i aria-hidden='true' class='fa fa-bookmark'></i>" "" "" "")
            ("faCode" "\\faCode" nil "<i aria-hidden='true' class='fa fa-code'></i>" "" "" "")
            ("faBike" "\\faBike" nil "<i aria-hidden='true' class='fa fa-bicycle'></i>" "" "" "")
+           ("faToronto" "\\faBike" nil "<i aria-hidden='true' class='fa fa-train-subway'></i>" "" "" "")
            ("faGithub" "\\faGithub" nil "<i aria-hidden='true' class='fa fa-github'></i>" "" "" "")
            ("faGraduationCap" "\\faGraduationCap" nil "<i aria-hidden='true' class='fa fa-graduation-cap'></i>" "" "" "")
            ("faImage" "\\faImage" nil "<i aria-hidden='true' class='fa fa-image'></i>" "" "" ""))))
