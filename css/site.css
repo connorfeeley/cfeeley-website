@@ -499,6 +499,10 @@ section.post-list li .timestamp::after {
   content: " »";
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 /* https://github.com/fniessen/org-html-themes/blob/master/styles/readtheorg/css/htmlize.css */
 .org-bold { /* bold */ font-weight: bold; }
 .org-bold-italic { /* bold-italic */ font-weight: bold; font-style: italic; }

@@ -1,7 +1,8 @@
 #+title: Series: Bike Share Toronto and Freedom of Information
 #+author: Connor Feeley
-#+date: <2023-12-01>
+#+date: <2023-11-26>
 
 * [[file:toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
 * [[file:the-request.org][2: The Request]]
 * [[file:discrepancies-in-the-api.org][3: Discrepancies]]
+* [[file:the-second-request.org][4: Much ado about a contract (the second request)]]

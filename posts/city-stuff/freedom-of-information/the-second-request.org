@@ -1,8 +1,8 @@
-#+title: FOI: The Second Request
+#+title: FOI: Much ado about a contract (the second request)
 #+author: Connor Feeley
-#+date: <2023-12-05>
+#+date: <2023-12-15>
 
-I found some /"interesting"/ stuff in a PDF from last year[fn:1] (emphasis mine).
+I found some /"interesting"/ stuff in a PDF from last year[fn:1] (emphasis mine):
 #+begin_quote
 The pedal-assist e-bikes we purchase are engineered and designed by PBSC. The bike models - ‘E-FITs’ - feature a central motor with a battery that is fully integrated in the aluminum frame of the bike. Users can travel up to 25 kilometres (km) per hour and can travel for 70 km until recharging is needed.
 
@@ -13,7 +13,7 @@ E-bikes and charging stations are fully compatible with the rest of the system, 
 
 Oh. Yikes.
 
-/We bought 1900 e-bikes without a contract for the bike share system operator to operate them./
+_We bought 1900 e-bikes without a contract with the bike share system operator to operate them._
 
 Well, I've read every damn report to the TPA board since then, and /such a report does not exist/.
 

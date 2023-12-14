@@ -21,6 +21,7 @@ Full list on my [[file:./posts/archive.org][my blog.]]
 - <2023-11-27> [[file:posts/city-stuff/freedom-of-information/toronto-foi-request.org][1: The Good, the Bad, and the E-Bike]]
 - <2023-11-27> [[file:posts/city-stuff/freedom-of-information/the-request.org][2: The Request]]
 - <2023-12-05> [[file:posts/city-stuff/freedom-of-information/discrepancies-in-the-api.org][3: The Discrepancies]]
+- <2023-12-15> [[file:posts/city-stuff/freedom-of-information/the-second-request.org][4: Much ado about a contract (the second request)]]
 
 * \faCode Tech
   :PROPERTIES:
