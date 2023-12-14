@@ -1,4 +1,4 @@
-#+title: Getting City of Toronto Records with Freedom of Information Requests
+#+title: Series: Bike Share Toronto and Freedom of Information
 #+author: Connor Feeley
 #+date: <2023-12-01>
 

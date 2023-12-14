@@ -1,6 +1,6 @@
 #+title: FOI: Discrepancies in the API
 #+author: Connor Feeley
-#+date: <2023-12-05>
+#+date: <2023-12-06>
 
 #+begin_quote
 Article is incomplete - check back later!

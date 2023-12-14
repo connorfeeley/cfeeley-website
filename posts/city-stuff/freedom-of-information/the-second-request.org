@@ -1,12 +1,25 @@
-#+title: The Second Request
+#+title: FOI: The Second Request
 #+author: Connor Feeley
 #+date: <2023-12-05>
 
+I found some /"interesting"/ stuff in a PDF from last year[fn:1] (emphasis mine).
 #+begin_quote
-Article is incomplete - check back later!
+The pedal-assist e-bikes we purchase are engineered and designed by PBSC. The bike models - ‘E-FITs’ - feature a central motor with a battery that is fully integrated in the aluminum frame of the bike. Users can travel up to 25 kilometres (km) per hour and can travel for 70 km until recharging is needed.
+
+E-bikes and charging stations are fully compatible with the rest of the system, allowing both conventional bikes and e-bikes to be docked in any solar-powered and e-bike charging station. Their complexities, however, offer some operational challenges that don’t exist in the regular system, that Bike Share staff are working to address. A list of these items can be found in Appendix A.
+
+*Currently, e-bike maintenance is included in TPA’s Operator Agreement with SHIFT Transit Inc., whereas e-bike operations are not included.* TPA is in discussions with SHIFT Transit Inc. surrounding e-bike operations to ensure that Bike Share can provide its customers with the same high-level experience expected of our regular iconic bike operations (i.e., convenient, and easy to find bikes). *TPA anticipates that a report will be presented to the TPA Board of Directors in third quarter (Q3) – fourth quarter (Q4) 2022 with contract amendments specific to e-bike operations.*
 #+end_quote
 
-I found some interesting stuff in a PDF from 2021.
+Oh. Yikes.
+
+/We bought 1900 e-bikes without a contract for the bike share system operator to operate them./
+
+Well, I've read every damn report to the TPA board since then, and /such a report does not exist/.
+
+So, are the e-bikes all dead or missing because an underpaid city staffer quit in 2022, nobody noticed they were in charge of this whole "contract renegotiation" thing, and the operator has been dutifully doing jack shit about e-bikes since then?
+
+Time will tell. Second FOI request has now been filed:
 #+begin_quote
 This is a request under this jurisdiction’s freedom of information legislation for records held by the Toronto Parking Authority.
 
@@ -14,3 +27,7 @@ I’m seeking all final contracts and amendments signed by this institutions tha
 
 I would like this information sent electronically.
 #+end_quote
+
+* <<footnotes>>
+
+[fn:1] [[https://www.toronto.ca/legdocs/mmis/2022/pa/bgrd/backgroundfile-199512.pdf][Bike Share Toronto First Quarter (Q1) 2022 Update]] p.6 (February 4, 2022)
