@@ -29,7 +29,7 @@
         perSystem = { self', config, pkgs, ... }:
           let
             emacsForPublish = ((pkgs.emacsPackagesFor pkgs.emacs29).emacsWithPackages (
-              epkgs: with epkgs; [ esxml htmlize webfeeder dash projectile ]
+              epkgs: with epkgs; [ esxml htmlize webfeeder dash projectile yaml-mode ox-rss ]
             ));
           in
           {
