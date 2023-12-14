@@ -231,11 +231,9 @@
   "Analog to org-html-publish-to-html using cfeeley/html backend.  PLIST, FILENAME and PUB-DIR are passed as is."
   (plist-put plist :html-head
              (concat
-               ;; (cfeeley--insert-snippet "analytics.js")
                (cfeeley/org-html-head
                 (append (cfeeley/head-common-list plist)
                         (plist-get plist :html-head-list)) plist)))
-  (plist-put plist :html-htmlized-css-url (cfeeley/asset-relative-link-to "css/site.css" pub-dir t))
   (cfeeley/org-html-publish-generate-redirect plist filename pub-dir)
   (org-publish-org-to 'cfeeley/html filename
 		      (concat "." (or (plist-get plist :html-extension)
@@ -272,12 +270,7 @@
   (file-relative-name filename (cfeeley/project-root)))
 
 (defun cfeeley/org-html-publish-site-to-html (plist filename pub-dir)
-  "Wraps org-html-publish-to-html.  Append css to hide title to PLIST and other front-page styles.  FILENAME and PUB-DIR are passed."
-  (when (equal "index.org" (cfeeley/project-relative-filename filename))
-    (plist-put plist :html-head-list
-               (list
-                (list "link"
-                      (list "rel" "stylesheet" "href" (cfeeley/asset-relative-link-to "css/index.css" pub-dir t))))))
+  "Wraps org-html-publish-to-html. FILENAME and PUB-DIR are passed."
   (cfeeley/org-html-publish-to-html plist filename pub-dir))
 
 (defun cfeeley/org-rss-publish-to-rss (plist filename pub-dir)
