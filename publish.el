@@ -236,10 +236,10 @@
                         (plist-get plist :html-head-list)) plist)))
   (cfeeley/org-html-publish-generate-redirect plist filename pub-dir)
   (org-publish-org-to 'cfeeley/html filename
-		      (concat "." (or (plist-get plist :html-extension)
-				      org-html-extension
-				      "html"))
-		      plist pub-dir))
+                      (concat "." (or (plist-get plist :html-extension)
+                                      org-html-extension
+                                      "html"))
+                      plist pub-dir))
 
 (defun cfeeley/org-html-head (tags plist)
   "Generate header elements from TAGS.  Accept PLIST for extra context."
