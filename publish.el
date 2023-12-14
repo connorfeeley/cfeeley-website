@@ -189,7 +189,7 @@
   (let ((description "Connor Feeley's blog."))
     (list
      (list "link" (list "href" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" "rel" "stylesheet" "integrity" "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" "crossorigin" "anonymous"))
-     (list "meta" (list "description" description))
+     (list "meta" (list "name" "description" "content" description))
 
      (list "meta" (list "name" "google-site-verification" "content" "UUJavcM87PLd88UVF-D7kvb0UjN--i17UYS65rspYuo"))
 
