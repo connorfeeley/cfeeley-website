@@ -377,7 +377,7 @@
    (list "assets"
          :base-directory "./"
          :exclude (regexp-opt '("assets" "public"))
-         :include '("CNAME" "keybase.txt" "LICENSE" ".nojekyll" "publish.el" ".well-known/nostr.json")
+         :include '("LICENSE" "publish.el")
          :recursive t
          :base-extension (regexp-opt '("jpg" "gif" "png" "js" "svg" "css"))
          :publishing-directory "./public"
