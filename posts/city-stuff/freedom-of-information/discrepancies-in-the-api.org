@@ -2,10 +2,6 @@
 #+author: Connor Feeley
 #+date: <2023-12-05>
 
-#+begin_quote
-Article is incomplete - check back later!
-#+end_quote
-
 As it turns out, Toronto's Bike Share system uses a standardized API[fn:3] format: [[https://gbfs.org/][General Bikeshare Feed Specification]], or GBFS.
 
 #+begin_notes
