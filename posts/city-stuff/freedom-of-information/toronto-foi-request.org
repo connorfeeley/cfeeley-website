@@ -56,6 +56,63 @@ Especially since at the same time they expanded the station capacity (number of 
 My partner's place is uphill (/way/ uphill) from my place so there's really no reason for me to take an e-bike on the way home - though I will go to great lengths to track down an e-bike on the way /to/ their place.
 So I was honestly more stoked about the extra docks, because it's pretty annoying arriving at your destination, finding all the docks full, and then having to trek 20 minutes out of your way to go find an open dock.
 
+It took a few weeks for them to upgrade the station (I had to trek a whole /3 minutes longer/ to the next closest station!).
+
+And once the station reopened, it was full. Always full. Every single time I'd go to drop off a bike at the damn station, it was full.
+
+#+begin_quote
+But if it's full, at least you'll have no problem taking bikes out from it, right?
+#+end_quote
+
+Haha, wrong. It quickly became apparent that the station was completely full of dead e-bikes. At first I assumed that I was just getting unlucky.
+
+But the station would stay full of dead e-bikes for weeks on end.
+
+Not only that, but it seemed to me like /they were the same bikes/.
+
+I wanted to prove it - both to myself, and eventually to my city councilor so that it can get fixed.
+
+I'm a software engineer, so I figured the only way to prove it would be to find a way to get access to the data feed that the bike share app uses. Luckily for me, the city of Toronto is pretty committed to open data; the data feed is public.
+
+* "But who would buy close to 2000 e-bikes without having a way to charge them?"
+
+I've been building a tool that logs and stores the minute-to-minute station data that the city publishes so that I can visualize and analyze it to figure out just what the hell is going on (see: [[https://bikes.cfeeley.org][bikes.cfeeley.org]]).
+
+It was immediately obvious that the number of disabled bikes at the station wasn't fluctuating.
+
+It's important to note that I can't differentiate between a broken bike (customers can press a button on the dock to flag the bike for servicing, which locks the bike to the station) or a dead e-bike (which happens automatically when the charge falls below some threshold) from the data feed. They both show up as a disabled bike in the feed. However, since the number of disabled bikes wasn't fluctuation, and since I could just walk outside to check what kind of bikes are in the station, I knew for sure they were e-bikes.
+
+That's meant that I've been poring over city hall documents to try to make sense of the mechanics of how the system operates. How does charging work? How many charging stations and docks do we have? How does re-balancing (moving bikes from a full station to emptier stations) work?
+
+Eventually, I stumbled across a report from Bike Share Toronto to the board of directors of the Toronto Parking Authority.
+
+Buried on page 6 of that document[fn:8] is what seems to be a damning admission that might explain what's happening (emphasis mine):
+#+begin_quote
+E-bikes and charging stations are fully compatible with the rest of the system, allowing both conventional bikes and e-bikes to be docked in any solar-powered and e-bike charging station. Their complexities, however, offer some operational challenges that don’t exist in the regular system, that Bike Share staff are working to address. A list of these items can be found in Appendix A.
+
+*Currently, e-bike maintenance is included in TPA’s Operator Agreement with SHIFT Transit Inc., whereas e-bike operations are not included. TPA is in discussions with SHIFT Transit Inc. surrounding e-bike operations* to ensure that Bike Share can provide its customers with the same high-level experience expected of our regular iconic bike operations (i.e., convenient, and easy to find bikes). TPA anticipates that *a report will be presented to the TPA Board of Directors in third quarter (Q3) – fourth quarter (Q4) 2022 with contract amendments specific to e-bike operations*.
+#+end_quote
+
+Are you kidding me?
+
+#+begin_quote
+But who would buy close to 2000 e-bikes without having a way to charge them?
+#+end_quote
+
+Apparently: Toronto.
+
+* Remaining Questions
+
+Now, I've read every document I can find from the Toronto Parking Authority's board meetings. I can find no other mention of this contract amendment. It's possible it never went to the board... but it's possible it just doesn't exist.
+
+So I've started filing freedom of information (FOI) requests.
+
+Read about them here:
+- [[file:the-request.org][Part 2: The Request]]: for the text of the first FOI request I sent
+- [[file:the-response.org][Part 3: The Response]]: for the text of the response to the first FOI request
+- [[file:discrepancies-in-the-api.org][Part 4: Discrepancies]]: for an analysis of some very strange numbers in their data feed
+- [[file:the-second-request.org][Part 5: Much ado about a contract (the second request)]]: for the second FOI request I sent (requesting the contract between the Toronto Parking Authority and Shift Transit)
+
 * COMMENT 2024 Equipment Purchase
 #+begin_quote
 In 2024, Bike Share Toronto will add 70 solar stations, 460 electric charging docks, and 530 iconic bikes to the system. These investments will grow the current system to 870 stations, 45 electric charging stations (1,160 e-docks) and 9,500 bikes, including 7,585 iconic bikes and 1,912 e-bikes.
@@ -72,6 +129,7 @@ Although this would make Bike Share Toronto a North American leader in e-bike ch
 #+begin_quote
 Consideration has been given to the option of purchasing e-bikes exclusively, but currently, it is urgent that the challenge of system rebalancing be addressed. Ensuring a well-balanced distribution of bikes throughout the network is essential to providing a seamless user experience. In addition, as the network expands into Neighbourhood Improvement Areas, TPA wants to ensure equitable access to annual members who may find the additional e-bike cost per minute a barrier. A balanced mix of iconic and ebikes is consistent with the approach being taken by other Bike Share programs, where typically, e-bikes make up 20 percent of fleets.
 #+end_quote
+
 * COMMENT First Quarter 2021 Update
 
 #+begin_quote
@@ -184,3 +242,4 @@ I don't drive anymore and I'll go to fairly extreme lengths to avoid rideshare c
 
 [fn:7] [[https://www.ic.gc.ca/opic-cipo/cpd/eng/patent/3166421/summary.html][Patent 3166421: SYSTEM AND METHOD FOR RECHARGING AN ELECTRIC VEHICLE]]
 
+[fn:8] [[https://www.toronto.ca/legdocs/mmis/2022/pa/bgrd/backgroundfile-199512.pdf][Bike Share Toronto First Quarter (Q1) 2022 Update (p6)]] (February 4, 2022)
