@@ -11,36 +11,36 @@ Article is incomplete - check back later!
 # I've been working on a [[/tech][tool]]
 
 I'm a really big fan of Toronto's public Bike Share program.
-It's (ironically) managed by the Toronto Parking Authority, while day-to-day operations (maintenance, station installs, bike rebalancing[fn:1]) are contracted out to Shift Transit.
+It's (ironically) managed by the Toronto Parking Authority, while day-to-day operations (maintenance, station installs, bike rebalancing[fn:1]) are contracted out to a private company - Shift Transit.
 Overall, I think the system is pretty well run.
 
 * Value
-It's good value for money - I have the ($120/year) 45-minute membership and it's become my primary transportation method.
-I've spent about $400 less on Presto this year compared to 2022.
 
+It's good value for money - I spend $120 a year on my membership and that lets me take bikes out for 45 minutes at a time. It's (mostly) easy to find a bike within a short walk, (mostly) easy to find a docking station at my destination, and I don't even have to own a bike. But, mainly: even in the dead of winter, it's still a vastly superior experience than my local streetcar - which is [[https://www.thestar.com/news/gta/the-king-street-streetcar-pilot-promised-a-better-way-to-cross-downtown-we-walked-biked/article_37f13a86-ac6a-5011-9a20-f6346b60870d.html][just completely terrible now]].
+
+If I can bike somewhere, I'll bike. If I can't bike or I'm with people who don't want to bike, I'll take transit. Most of my friends aren't too scared of biking in the city, which means I've managed to spend about $400 less on transit this year versus 2022.
 
 More importantly, the bike share program is great value /for the city/, especially when considered in the context of Toronto's current financial Armageddon.
+
 Bike Share Toronto operates at a loss of a few million per year ($2.6 million in 2023[fn:2]), or $0.67 per ride[fn:3].
 The TTC has a subsidy per trip of $4.08[fn:4], for comparison.
 
+The system is great, and it's overlooked by way too many people.
 
-Look, the system is genuinely great, in a lot of ways.
-
-# FIXME: This is repetative.
-But that isn't the point of this article - the point of this article is exploring the ways that it isn't.
-But now I use it as my primary way of getting around, and I've got an axe to grind.
+But I've got an axe to grind.
 
 * Let's Talk About the E-Bikes
+
 The e-bike fleet expanded massively over the last year, going from 525 e-bikes at the end of 2022[fn:5] to over 1800 at present[fn:6].
 
-There appear to be two models in use: the [[https://www.pbsc.com/products#eFit][E-Fit]], and the "E-Fit G5" - which appears to simply be a newer version of the E-Fit (with a fancy digital speedometer and slightly strangely-angled brake levers).
+There are two e-bike models in use: the [[https://www.pbsc.com/products#eFit][E-Fit]], and the "E-Fit G5" - a modernized version of the E-Fit with a fancy digital speedometer and slightly strangely-angled brake levers.
 
-Of course, e-bikes need to be charged.
+The challenge with e-bikes are, of course, that e-bikes need to be charged (ours have a range of 70km).
 
 Fortunately, the bike manufacturer (PBSC) has a nifty patent[fn:7] on charging e-bikes through the station docking connector.
 /Un/-fortunately, out of our ~750 stations, precisely 20 are charging stations ([[*List of Charging Stations][see list]])
 
-Unless someone happens to dock an e-bike at one of those stations, those e-bikes run out of charge and then some poor sap has to drive around at 1 AM and load a bunch of e-bikes into a rental van so that they can be charged somewhere.
+Unless someone happens to dock an e-bike at one of those stations, those e-bikes eventually run out of charge and then some poor sap has to drive around at 1 AM and load a bunch of e-bikes into a van so that they can be charged somewhere.
 
 I'm assuming there's a warehouse somewhere with hundreds of chargers where the e-bikes get taken to sleep.
 I don't actually know this for sure (and nor have I have seen reference to such a place existing) - but who would buy close to 2000 e-bikes without having a way to charge them?
@@ -51,9 +51,9 @@ I don't actually know this for sure (and nor have I have seen reference to such 
 
 Around the start of June the station outside my partner's place was upgraded to a charging station.
 Cool - surely that means there's gonna be a higher chance I'll be able to snag an e-bike!
-Especially since at the same time they added ~50% more docks.
+Especially since at the same time they expanded the station capacity (number of docks) by about 50%.
 
-My partner's place is actually uphill (/way/ uphill) from my place so there's really no reason for me to take an e-bike on the way home - though I will go to great lengths to track down an e-bike on the way /to/ their place.
+My partner's place is uphill (/way/ uphill) from my place so there's really no reason for me to take an e-bike on the way home - though I will go to great lengths to track down an e-bike on the way /to/ their place.
 So I was honestly more stoked about the extra docks, because it's pretty annoying arriving at your destination, finding all the docks full, and then having to trek 20 minutes out of your way to go find an open dock.
 
 * COMMENT 2024 Equipment Purchase
