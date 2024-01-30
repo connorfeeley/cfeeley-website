@@ -2,13 +2,6 @@
 #+author: Connor Feeley
 #+date: <2023-11-27>
 
-#+begin_quote
-Article is incomplete - check back later!
-#+end_quote
-
-/So, you want to make a freedom of information request to the City of Toronto./
-
-# I've been working on a [[/tech][tool]]
 
 I'm a really big fan of Toronto's public Bike Share program.
 It's (ironically) managed by the Toronto Parking Authority, while day-to-day operations (maintenance, station installs, bike rebalancing[fn:1]) are contracted out to a private company - Shift Transit.

@@ -347,7 +347,7 @@
          :html-link-use-abs-url t)
    (list "site"
          :base-directory "./"
-         :include '("posts/archive.org" "README.org")
+         :include '("posts/archive.org" "README.org" "credits.org" "privacy-policy.org")
          :base-extension "org"
          :publishing-directory (expand-file-name "public" (projectile-project-root))
          :publishing-function 'cfeeley/org-html-publish-site-to-html
