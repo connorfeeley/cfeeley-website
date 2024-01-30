@@ -5,7 +5,6 @@
 Transcribed from [[https://youtu.be/5-xithlJT6I?t=2327][Light Rail Transit Sub-Committee - January 29, 2024 - YouTube]], from around the 38:47 mark.
 
 * Councillor Nrinder Naan (Chair)
-#+begin_quote
 First up we have Councillor Josh Matlow City of Toronto respecting the Hamilton LRT.
 
 Welcome Josh. We have a five-minute rule at the four-minute mark you'll hear a ding which indicates to you that you have 60 seconds remaining.
@@ -13,10 +12,8 @@ Welcome Josh. We have a five-minute rule at the four-minute mark you'll hear a d
 At this point if you could turn on your camera and microphone so we can we had seen you earlier and I just want to make sure we can hear you.
 
 Hi. Please proceed.
-#+end_quote
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 Well thank you. Thank you chair and members for having me today to share some experiences that we've had in Toronto that I believe would be informative and hopefully helpful as you consider an incredibly important decision that will impact not only the future of transit in Hamilton but the service that I know all of you want to deliver to the residents that you serve.
 
 I've had conversations with your local ATU 107 and HSR and I've learned about what you are deciding.
@@ -98,10 +95,8 @@ But they don't really consult with us.
 Their consortium, the private companies, have actually sued Metrolink successfully several times.
 
 We theorize, because we haven't had details shared with us, that that also could be, those conflicts could be a cause of the delays that we've experienced [since 2020] to even see the line on Eglinton open.
-#+end_quote
 
 * Councillor Nrinder Naan (Chair)
-#+begin_quote
 Thank you.
 
 I'm going to have to interrupt you there as you've reached your five-minute timeline.
@@ -115,17 +110,13 @@ If any of the councillors have any questions, perhaps the remainder of what you 
 So opening it up for questions to our delegate.
 
 Member Andrus.
-#+end_quote
 
 * Member Andrus
-#+begin_quote
 I wanted to ask you:
 
 Why did Toronto choose to keep the operations in-house versus the design, build, finance, operate, maintain model  that Hamilton is looking at with only Bundle 3, the passenger interface, being looked at today by the staff recommendation?  Can I ask you what the choice was to keep those operations in-house?
-#+end_quote
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 The [inaudible] is, for a number of reasons.
 
 The foremost is that we want an integrated operation of our transit system. Your Hamilton LRT will serve in some ways like our Eglinton line along [with?] the subway.
@@ -145,10 +136,8 @@ And then lastly, as I mentioned about [inaudible; "service"?] accountability.
 I as a councillor - and I imagine the councillors on this committee would feel the same way - I have the ability when the TTC does something good to encourage and support them.
 
 And when they do something that is a mistake. I have the ability to [inaudible], and then propose solutions that we can actually implement on the ground here in the city of Toronto, rather than hope that Metrolinx or their private company will consider our request.
-#+end_quote
 
 * Member Andrus
-#+begin_quote
 Thank you.
 
 Quick follow-up.
@@ -162,10 +151,8 @@ And that line, of course, is much closer - being all surface rail with no tunnel
 Can you speak a little bit about that project? And what the difference has been in the experience? You talked a little bit about Eglinton being a black box.
 
 But could you talk a little bit about your experience with the Finch West?  I think it's a little bit closer to our project.
-#+end_quote
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 Well, Finch West certainly has been relatively a smoother experience.
 
 That being said, there's still, and if you speak to the local councillors along Finch.
@@ -179,10 +166,8 @@ Not asking Metrolinx or the provincial government to do something - be able to a
 And while Finch, yes, the construction design has been smoother than the Eglinton line, ultimately, they will be operated by the TTC.
 
 And that's the decision that you're going to have to make as [inaudible].
-#+end_quote
 
 * Member Andrus
-#+begin_quote
 Thank you.
 
 Last quick question from me.
@@ -190,10 +175,8 @@ Last quick question from me.
 So on that operations:
 
 What do you expect once you assume those operations through the TTC as a city?  Once the handoff - I especially think of Finch West because it's the most applicable to our project - when that handoff is complete (and it seems to have less issues than the Eglinton Crosstown), what do you expect to change in the relationship with both the service delivery and the project itself?
-#+end_quote
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 It'll be refreshing, thankfully, to have the operations entirely done by the TTC.
 
 These are publicly accountable employees.
@@ -209,19 +192,15 @@ Where it wasn't even Metrolinx that made the decision to shut down an intersecti
 Even blocked access.
 
 [inaudible]
-#+end_quote
 
 * Councillor Nrinder Naan (Chair)
-#+begin_quote
 Sorry, you cut out there.
 
 Your feed is cutting out a little bit.
 
 You cut out right at "the intersection".
-#+end_quote
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 There was an intersection, a duplex at Eglinton.
 
 [inaudible] the area.
@@ -245,10 +224,8 @@ The challenge that that presented, and the reason why I look forward to the TTC 
 The TTC will be not only accountable, but we actually have a say in their operations.
 
 Which I think will be incredibly helpful.
-#+end_quote
 
 * Councillor Nrinder Naan (Chair)
-#+begin_quote
 Thank you Member Andrus.
 
 Any further questions for our delegate?  Oh.
@@ -256,10 +233,8 @@ Any further questions for our delegate?  Oh.
 Next up is Councillor Maureen Wilson.
 
 Followed by Councillor Danko.
-#+end_quote
 
 * Councillor Maureen Wilson
-#+begin_quote
 Thank you, Chair.
 
 Just a question of clarification.
@@ -269,10 +244,8 @@ Just trying to follow the logic that the Waterloo experience is somehow differen
 I'm not sure I understand.
 
 If I could just get some further insight, that would be helpful.
-#+end_quote
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 Yeah [ION].
 
 It's a regional line that serves the Waterloo region.
@@ -290,10 +263,8 @@ That will feed into the spines of our transit.
 So, the idea being [inaudible].
 
 [inaudible]
-#+end_quote
 
 * Councillor Nrinder Naan (Chair)
-#+begin_quote
 You're breaking up again.
 
 And I apologize.
@@ -315,10 +286,8 @@ If I could.
 Councillor Wilson.
 
 To what point did you hear clearly?
-#+end_quote
 
 * Councillor Maureen Wilson
-#+begin_quote
 I think, Chair, I heard clearly up until the point that the distinction - and I don't want to put these words into [his mouth].
 
 So, I'm just looking for confirmation.
@@ -326,11 +295,8 @@ So, I'm just looking for confirmation.
 The distinction is that Hamilton's LRT is running through an urban center as opposed to the Waterloo experience.
 
 But I'm not sure.
-#+end_quote
-
 
 * (Toronto) Councillor Josh Matlow
-#+begin_quote
 No, thank you.
 
 It isn't so much [inaudible].
@@ -350,10 +316,8 @@ And then a third party - arms length, private company, that's operating the Hami
 Now, if they are always working well together, and they're always on the same page, that might be a better experience.
 
 I think it's fair to guess [inaudible].
-#+end_quote
 
 * Councillor Nrinder Naan (Chair)
-#+begin_quote
 Still really hard to hear you, Councillor Matlow.
 
 We did get enough of a response to your last question.
@@ -365,13 +329,10 @@ Next up we have Councillor Danko.
 And I'm not sure if there's anything else you can do on your end to optimize your feed.
 
 And I'll turn to the clerks... if there's anything else we can suggest.
-#+end_quote
 
 * Councillor John-Paul Danko
-#+begin_quote
 Actually, Chair, I'd think with the former Roger's CEO as a Mayor of Toronto they'd have better internet.
 
 I'll reserve my questions. I'll ask staff.
 
 Thank you.
-#+end_quote
