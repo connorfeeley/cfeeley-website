@@ -2,7 +2,15 @@
 #+author: Connor Feeley
 #+date: 2024-01-30
 
-Transcribed from [[https://youtu.be/5-xithlJT6I?t=2327][Light Rail Transit Sub-Committee - January 29, 2024 - YouTube]], from around the 38:47 mark.
+Councillor Josh Matlow of Toronto deputed to the Hamilton LRT subcommittee on January 29th, detailing Toronto's (poor) experience with the Eglinton Crosstown and the ramifications of the public-private-partnership model used to build it.
+
+I think the points he raises are important, and I hope Hamilton learns from our mess in Toronto.
+
+This was transcribed from Hamilton city council's YouTube stream ([[https://youtu.be/5-xithlJT6I?t=2327][Light Rail Transit Sub-Committee - January 29, 2024 - YouTube]]), starting around the 38:47 mark.
+
+In true Toronto councillor fashion, Matlow's audio starts off /slightly/ choppy but degrades into absolutely unintelligible by the end of the questions. I've done my best to fill in the blanks where possible, but his audio cuts out for as long as 10 seconds at points.
+
+(Toronto council: *please* issue actual microphones to councillors!)
 
 * Councillor Nrinder Naan (Chair)
 First up we have Councillor Josh Matlow City of Toronto respecting the Hamilton LRT.
@@ -66,9 +74,7 @@ In other words, our TTC will be running the operations of our new LRTs.
 
 And while Waterloo, I know, has had a very different experience on the ION line, they are more of a regional line serving a regional area.
 
-I would submit to you that your line in Hamilton will act more like a municipal spine to the heart of your city.
-
-From Eastgate to McMaster.
+I would submit to you that your line in Hamilton will act more like a municipal spine to the heart of your city - from Eastgate to McMaster.
 
 And ultimately, all of those 14 kilometres will serve to feed various bus routes.
 
