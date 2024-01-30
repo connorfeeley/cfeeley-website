@@ -24,6 +24,9 @@ Full list on my [[file:./posts/archive.org][my blog.]]
 - <2023-12-05> [[file:posts/city-stuff/freedom-of-information/discrepancies-in-the-api.org][4: The Discrepancies]]
 - <2023-12-15> [[file:posts/city-stuff/freedom-of-information/the-second-request.org][5: Much ado about a contract (the second request)]]
 
+** \faTrain Transit
+- <2024-01-30> [[file:posts/city-stuff/hamilton-lrt-matlow-deputation.org][Councillor Josh Matlow's Deputation on Hamilton's LRT]]
+
 * \faCode Tech
   :PROPERTIES:
   :HTML_CONTAINER_CLASS: post-list

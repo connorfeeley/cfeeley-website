@@ -6,3 +6,5 @@
 ** [[file:freedom-of-information/the-response.org][3: The Response]]
 ** [[file:freedom-of-information/discrepancies-in-the-api.org][4: Discrepancies]]
 ** [[file:freedom-of-information/the-second-request.org][5: Much ado about a contract (the second request)]]
+
+* [[file:hamilton-lrt-matlow-deputation.org][Councillor Josh Matlow's Deputation on Hamilton's LRT]]
