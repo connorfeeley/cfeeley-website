@@ -15,4 +15,4 @@ I'm currently waiting to receive a response to my [[/city-stuff/freedom-of-infor
 
 ** <<virtual-dts>> [[https://github.com/connorfeeley/virtual-dts-mode][virtual-dts-mode]]: Emacs major mode for automatically decompiling and compiling device tree binary files.
 
-** <<goatcounter-flake>> [[http://github.com/connorfeeley/goatcounter-flake][goatcounter-flake]]: Nix packages and flake-parts modules for the privacy-focused [[https://www.goatcounter.com/][GoatCounter]] analytics platform :nix:
+** <<goatcounter-flake>> [[http://github.com/connorfeeley/goatcounter-flake][goatcounter-flake]]: Nix packages and flake-parts modules for the privacy-focused [[https://www.goatcounter.com/][GoatCounter]] analytics platform
